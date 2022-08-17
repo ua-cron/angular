@@ -1,11 +1,36 @@
 {
-  "name": "ng-cron",
-  "version": "0.0.1",
+  "name": "@sbzen/ng-cron",
+  "version": "2.0.0",
+  "description": "Quartz Cron Component - Angular",
+  "author": "Serhii Bzenko <bzenkosergey@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ua-cron/angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ua-cron/angular/issues"
+  },
+  "homepage": "https://ngcron.emptyui.com/",
+  "keywords": [
+    "angular",
+    "bootstap",
+    "ng",
+    "ng2",
+    "angular2",
+    "cron",
+    "cron builder",
+    "cron generator",
+    "quartz",
+    "quartz cron"
+  ],
+  "sideEffects": false,
   "peerDependencies": {
     "@angular/common": "^14.1.0",
     "@angular/core": "^14.1.0"
   },
   "dependencies": {
+    "@sbzen/cron-core": "2.0.0",
     "tslib": "^2.3.0"
   }
 }

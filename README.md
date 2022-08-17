@@ -1,27 +1,74 @@
-# Angular
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://vshymanskyy.github.io/StandWithUkraine)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+# Quartz/Unix Cron Component - Angular
 
-## Development server
+[Angular](https://angular.io/) cron widget built from the ground up using only [Bootstrap 4](https://getbootstrap.com/) CSS.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Please check our [demo & documentation](https://ngcron.emptyui.com/) and the list of
+[issues](https://github.com/ua-cron/angular/issues) to see all the things we are working on. Feel free to make comments there.
 
-## Code scaffolding
+<p align="center">
+	<a href="https://ngcron.emptyui.com/">
+		<img
+			width="200"
+			src="https://bzenkosergey.github.io/ng-cron/angular/assets/logo.png"
+			alt="ng-cron">
+	</a>
+</p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<p align="center">
+	<a href="https://badge.fury.io/js/%40sbzen%2Fng-cron">
+		<img
+			src="https://badge.fury.io/js/%40sbzen%2Fng-cron.svg"
+			alt="npm version">
+	</a>
+	<a href="https://npmjs.org/%40sbzen%2Fng-cron">
+		<img
+			src="https://img.shields.io/npm/dm/%40sbzen%2Fng-cron.svg"
+			alt="npm downloads">
+	</a>
+</p>
 
-## Build
+## Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This is an open source project that builds a cron builder component for Angular applications.
+It supports Quartz/Unix cron string formats for both input and output.
+Inspired by this [non-angular](https://www.freeformatter.com/cron-expression-generator-quartz.html) implementation.
 
-## Running unit tests
+## Installation
+You can use either the npm or yarn command-line tool to install packages.
+```
+npm install --save @sbzen/ng-cron
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Display the cron component
+You need to import the QuartzCronModule that you want to display by adding the following lines to your ngModule.
 
-## Running end-to-end tests
+```
+import { QuartzCronModule } from '@sbzen/ng-cron';
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+@NgModule ({
+	imports: [
+		QuartzCronModule
+	]
+})
+```
+Add the cron component into yout template
+```
+<quartz-cron></quartz-cron>
+```
 
-## Further help
+## Usage & Demo
+Main source of API documentation and usage scenarios available here: https://ngcron.emptyui.com/.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Compatibility
+The only two required dependencies are Angular and cron-core.
+The Bootstrap CSS is optional as you can use this component with your own styling.
+Here is the versions compatibility list:
+
+| Ng Cron          |    Angular    |  Bootstrap CSS |
+| -------------    | ------------- | -------------- |
+| 0.0.1            | 7.x.x         | 4.x.x          |
+| 1.0.1            | 11.x.x        | 4.x.x          |
+| 2.0.0            | 14.x.x        | 4.x.x          |
