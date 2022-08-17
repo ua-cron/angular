@@ -24,14 +24,6 @@
           },
           "defaultConfiguration": "production"
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ng-cron/src/test.ts",
-            "tsConfig": "projects/ng-cron/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-cron/karma.conf.js"
-          }
-        },
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
@@ -44,6 +36,77 @@
           "options": {
             "browserTarget": "ng-cron:build"
           }
+        }
+      }
+    },
+    "e2e": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/e2e",
+      "sourceRoot": "projects/e2e/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/e2e",
+            "index": "projects/e2e/src/index.html",
+            "main": "projects/e2e/src/main.ts",
+            "polyfills": "projects/e2e/src/polyfills.ts",
+            "tsConfig": "projects/e2e/tsconfig.app.json",
+            "assets": [
+              "projects/e2e/src/favicon.ico",
+              "projects/e2e/src/assets"
+            ],
+            "styles": [
+              "projects/e2e/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/e2e/src/environments/environment.ts",
+                  "with": "projects/e2e/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "e2e:build:production"
+            },
+            "development": {
+              "browserTarget": "e2e:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
         }
       }
     }

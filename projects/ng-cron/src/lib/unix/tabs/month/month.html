@@ -22,7 +22,7 @@
 </unix-cron-increment>
 
 <cron-and
-  gridSize="col-2"
+  [gridSize]="['col-3', 'col-md-2']"
   [label]="localization.unix.month.and.label"
   [cssClassPrefix]="cssClassPrefix"
   [checked]="api.isAndSelected()"

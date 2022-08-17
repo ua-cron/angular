@@ -1,0 +1,127 @@
+<div
+	class="re-cron-test"
+	[attr.data-cron-type]="type">
+
+	<h1>{{type}}</h1>
+
+	<input
+		data-cron="value"
+		[value]="value"
+		(change)="handleValueUpdate($event)">
+
+	<button
+		data-cron-action="localization-reset"
+		class="ml-1"
+		type="button"
+		(click)="setLocalization(undefined)">
+		Reset Localization
+	</button>
+	<button
+		data-cron-action="localization-use"
+		class="ml-1"
+		type="button"
+		(click)="setLocalization(localization || getLocalization())">
+		Use Localization
+	</button>
+	<button
+		data-cron-action="disable"
+		class="ml-1"
+		type="button"
+		(click)="setDisabled(!disabled)">
+		Disable
+	</button>
+	<button
+		data-cron-action="hide-tabs"
+		class="ml-1"
+		type="button"
+		(click)="setHideTabs(true)">
+		Hide tabs
+	</button>
+	<button
+		data-cron-action="show-tabs"
+		class="ml-1"
+		type="button"
+		(click)="setHideTabs(false)">
+		Show tabs
+	</button>
+	<button
+		data-cron-action="add-css-class-prefix"
+		class="ml-1"
+		type="button"
+		(click)="setCssClassPrefix('my-')">
+		Add "my-" css prefix
+	</button>
+	<button
+		data-cron-action="remove-css-class-prefix"
+		class="ml-1"
+		type="button"
+		(click)="setCssClassPrefix(undefined)">
+		Remove "my-" css prefix
+	</button>
+
+	<div class="mt-1">
+		<input
+			*ngFor="let path of getLocalizationPathes()"
+			data-cron-action="localization-field"
+			[attr.data-cron-action-value]="path"
+			class="mr-1 mw-fixed-70"
+			[disabled]="!localization"
+			[placeholder]="path"
+			[value]="getLocalizationValue(path, localization)"
+			(change)="updateLocalizationField(path, $event)"/>
+	</div>
+
+	<div class="mt-1">
+		<button
+			class="mr-1"
+			data-cron-action="reset-tab"
+			type="button"
+			(click)="setTabs(undefined)">
+			Reset Tabs
+		</button>
+		<button
+			class="mr-1"
+			type="button"
+			data-cron-action="hide-tab"
+			(click)="setTabs([])">
+			Remove Tabs
+		</button>
+
+		<button
+			*ngFor="let tab of initialTabs"
+			class="mr-1"
+			data-cron-action="toggle-tab"
+			[attr.data-cron-action-value]="tab"
+			(click)="toggleTab(tab)">
+			{{tab}}
+			{{addedTab(tab) ? '-' : '+'}}
+		</button>
+	</div>
+
+	<div class="mt-1">
+		<button
+			*ngFor="let tab of initialTabs"
+			class="mr-1"
+			data-cron-action="change-tab"
+			[attr.data-cron-action-value]="tab"
+			(click)="setActiveTab(tab)">
+			{{tab}}
+		</button>
+	</div>
+
+	<div [attr.data-cron-active-tab]="activeTab">
+		{{activeTab}}
+	</div>
+
+	<ng-container
+		*ngTemplateOutlet="content; context: {
+			value: value,
+			cssClassPrefix: cssClassPrefix,
+			localization: localization,
+			activeTab: activeTab,
+			tabs: tabs,
+			hideTabs: hideTabs,
+			disabled: disabled
+		}">
+	</ng-container>
+</div>

@@ -1,0 +1,87 @@
+<container
+  type="ReCron"
+  value="0,1,2 2/4 6/2 ? 2-7 SUN,MON 2019/1"
+  #reCronContainer>
+
+  <ng-template
+    #content
+    let-value="value"
+    let-cssClassPrefix="cssClassPrefix"
+    let-localization="localization"
+    let-activeTab="activeTab"
+    let-tabs="tabs"
+    let-hideTabs="hideTabs"
+    let-disabled="disabled">
+
+    <quartz-cron
+      [cssClassPrefix]="cssClassPrefix"
+      [localization]="localization"
+      [activeTab]="activeTab"
+      [tabs]="tabs"
+      [hideTabs]="hideTabs"
+      [disabled]="disabled"
+      [ngModel]="value"
+      (changed)="reCronContainer.updateValue($event)"
+      (tabChanged)="reCronContainer.updateActiveTab($event)">
+    </quartz-cron>
+  </ng-template>
+</container>
+
+<container
+  type="ReQuartzCron"
+  value="0,1,2 2/4 6/2 ? 2-7 SUN,MON 2019/1"
+  #quartzContainer>
+
+  <ng-template
+    #content
+    let-value="value"
+    let-cssClassPrefix="cssClassPrefix"
+    let-localization="localization"
+    let-activeTab="activeTab"
+    let-tabs="tabs"
+    let-hideTabs="hideTabs"
+    let-disabled="disabled">
+
+    <quartz-cron
+      [cssClassPrefix]="cssClassPrefix"
+      [localization]="localization"
+      [activeTab]="activeTab"
+      [tabs]="tabs"
+      [hideTabs]="hideTabs"
+      [disabled]="disabled"
+      [ngModel]="value"
+      (changed)="quartzContainer.updateValue($event)"
+      (tabChanged)="quartzContainer.updateActiveTab($event)">
+    </quartz-cron>
+  </ng-template>
+</container>
+
+<container
+  type="ReUnixCron"
+  value="0 4 8-14 * *"
+  [initialTabs]="[tab.MINUTES, tab.HOURS, tab.DAY, tab.MONTH]"
+  #unixContainer>
+
+  <ng-template
+    #content
+    let-value="value"
+    let-cssClassPrefix="cssClassPrefix"
+    let-localization="localization"
+    let-activeTab="activeTab"
+    let-tabs="tabs"
+    let-hideTabs="hideTabs"
+    let-disabled="disabled">
+
+    <unix-cron
+      [cssClassPrefix]="cssClassPrefix"
+      [localization]="localization"
+      [activeTab]="activeTab"
+      [tabs]="tabs"
+      [hideTabs]="hideTabs"
+      [disabled]="disabled"
+      [ngModel]="value"
+      (changed)="unixContainer.updateValue($event)"
+      (tabChanged)="unixContainer.updateActiveTab($event)">
+    </unix-cron>
+  </ng-template>
+</container>

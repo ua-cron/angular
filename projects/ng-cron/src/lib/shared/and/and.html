@@ -19,7 +19,7 @@
   <div class="{{cssClassPrefix}}row {{cssClassPrefix}}pl-3 {{cssClassPrefix}}pt-1 c-and-list">
     <div
       *ngFor="let item of options"
-      class="{{cssClassPrefix}}{{gridSize}} c-and-item"
+      class="{{getGridSizes()}} c-and-item"
       [attr.item-value]="item.value">
 
       <div class="{{cssClassPrefix}}form-check c-and-item-check">

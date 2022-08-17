@@ -3,5 +3,6 @@
   "dest": "../../dist/ng-cron",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["@sbzen/cron-core"]
 }

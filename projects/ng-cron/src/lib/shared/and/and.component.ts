@@ -12,7 +12,7 @@ export class CronAndComponent {
   @Input() checked = false;
   @Input() disabled = false;
   @Input() disabledControls = false;
-  @Input() gridSize = 'col-1';
+  @Input() gridSize = ['col-2', 'col-md-1'];
   @Input() label = '';
   @Input() segmentId = '';
   @Input() options: {
@@ -24,6 +24,12 @@ export class CronAndComponent {
   readonly mode = Mode.AND;
 
   constructor(private readonly cd: ChangeDetectorRef) {}
+
+  getGridSizes() {
+    return this.gridSize
+      .map(s => `${this.cssClassPrefix}${s}`)
+      .join(' ');
+  }
 
   changeValue(e: Event, value: string) {
     const status = this.selectValue(value);

@@ -151,7 +151,7 @@
   <div class="{{cssClassPrefix}}row {{cssClassPrefix}}pl-3 {{cssClassPrefix}}pt-1 c-and-weekday-list">
     <div
       *ngFor="let item of daysOfWeekCodes"
-      class="{{cssClassPrefix}}col-2 c-and-weekday-item"
+      class="{{cssClassPrefix}}col-3 {{cssClassPrefix}}col-md-2 c-and-weekday-item"
       [attr.item-value]="item.value">
 
       <div class="{{cssClassPrefix}}form-check c-and-weekday-item-check">
@@ -196,7 +196,7 @@
   <div class="{{cssClassPrefix}}row {{cssClassPrefix}}pl-3 {{cssClassPrefix}}pt-1 c-and-monthday-list">
     <div
       *ngFor="let item of daysOfMonth"
-      class="{{cssClassPrefix}}col-1 c-and-monthday-item"
+      class="{{cssClassPrefix}}col-2 {{cssClassPrefix}}col-md-1 c-and-monthday-item"
       [attr.item-value]="item.value">
 
       <div class="{{cssClassPrefix}}form-check c-and-monthday-item-check">
