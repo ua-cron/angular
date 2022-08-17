@@ -1,0 +1,442 @@
+<div class="{{cssClassPrefix}}form-group c-every-weekday c-segment">
+  <div class="{{cssClassPrefix}}form-check c-every-weekday-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-every-weekday-option"
+      type="radio"
+      [attr.id]="genId(mode.EVERY, segment.dayOfWeek)"
+      [value]="mode.EVERY"
+      [checked]="api.isEverySelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectEvery()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-every-weekday-option-label"
+      [attr.for]="genId(mode.EVERY, segment.dayOfWeek)">
+
+      {{localization.quartz.day.every.label}}
+    </label>
+  </div>
+</div>
+
+<div class="{{cssClassPrefix}}form-group {{cssClassPrefix}}form-inline c-increment-weekday c-segment">
+  <div class="{{cssClassPrefix}}form-check c-increment-weekday-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-increment-weekday-option"
+      type="radio"
+      [attr.id]="genId(mode.INCREMENT, segment.dayOfWeek)"
+      [value]="mode.INCREMENT"
+      [checked]="api.isDayOfWeekIncrementSelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfWeekIncrement()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-increment-weekday-option-label"
+      [attr.for]="genId(mode.INCREMENT, segment.dayOfWeek)">
+
+      {{localization.quartz.day.dayOfWeekIncrement.label1}}
+    </label>
+  </div>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-increment-weekday-every"
+    [disabled]="api.isDayOfWeekIncrementControlsDisabled()"
+    (change)="setDayOfWeekIncrementPrimary($event)">
+
+    <option
+      *ngFor="let item of daysOfWeekEvery"
+      [value]="item.value"
+      [selected]="api.getDayOfWeekIncrementPrimary() === item.value">
+      {{item.value}}
+    </option>
+  </select>
+
+  <label
+    class="c-increment-weekday-option-label2"
+    [attr.for]="genId(mode.INCREMENT, segment.dayOfWeek)">
+    {{localization.quartz.day.dayOfWeekIncrement.label2}}
+  </label>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-increment-weekday-from"
+    [disabled]="api.isDayOfWeekIncrementControlsDisabled()"
+    (change)="setDayOfWeekIncrementSecondary($event)">
+
+    <option
+      *ngFor="let item of daysOfWeek"
+      [value]="item.value"
+      [selected]="api.getDayOfWeekIncrementSecondary() === item.value">
+
+      {{localizeLabel(item.label, this.localization.common.dayOfWeek)}}
+    </option>
+  </select>
+</div>
+
+<div class="{{cssClassPrefix}}form-group {{cssClassPrefix}}form-inline c-increment-monthday c-segment">
+  <div class="{{cssClassPrefix}}form-check c-increment-monthday-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-increment-monthday-option"
+      type="radio"
+      [attr.id]="genId(mode.INCREMENT, segment.dayOfMonth)"
+      [value]="mode.INCREMENT"
+      [checked]="api.isDayOfMonthIncrementSelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfMonthIncrement()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-increment-monthday-option-label"
+      [attr.for]="genId(mode.INCREMENT, segment.dayOfMonth)">
+
+      {{localization.quartz.day.dayOfMonthIncrement.label1}}
+    </label>
+  </div>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-increment-monthday-every"
+    [disabled]="api.isDayOfMonthIncrementControlsDisabled()"
+    (change)="setDayOfMonthIncrementPrimary($event)">
+
+    <option
+      *ngFor="let item of daysOfMonth"
+      [value]="item.value"
+      [selected]="api.getDayOfMonthIncrementPrimary() === item.value">
+      {{item.value}}
+    </option>
+  </select>
+
+  <label
+    class="c-increment-monthday-option-label2"
+    [attr.for]="genId(mode.INCREMENT, segment.dayOfMonth)">
+
+    {{localization.quartz.day.dayOfMonthIncrement.label2}}
+  </label>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-increment-monthday-from"
+    [disabled]="api.isDayOfMonthIncrementControlsDisabled()"
+    (change)="setDayOfMonthIncrementSecondary($event)">
+
+    <option
+      *ngFor="let item of daysOfMonthEvery"
+      [value]="item.value"
+      [selected]="api.getDayOfMonthIncrementSecondary() === item.value">
+
+      {{localizeLabel(item.label, localization.common.dayOfMonth)}}
+    </option>
+  </select>
+
+  <label
+    class="c-increment-monthday-option-label3"
+    [attr.for]="genId(mode.INCREMENT, segment.dayOfMonth)">
+
+    {{localization.quartz.day.dayOfMonthIncrement.label3}}
+  </label>
+</div>
+
+<div class="{{cssClassPrefix}}form-group c-and-weekday c-segment">
+  <div class="{{cssClassPrefix}}form-check c-and-weekday-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-and-weekday-option"
+      type="radio"
+      [attr.id]="genId(mode.AND, segment.dayOfWeek)"
+      [value]="mode.INCREMENT"
+      [checked]="api.isDayOfWeekAndSelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfWeekAnd()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-and-weekday-option-label"
+      [attr.for]="genId(mode.AND, segment.dayOfWeek)">
+
+      {{localization.quartz.day.dayOfWeekAnd.label}}
+    </label>
+  </div>
+
+  <div class="{{cssClassPrefix}}row {{cssClassPrefix}}pl-3 {{cssClassPrefix}}pt-1 c-and-weekday-list">
+    <div
+      *ngFor="let item of daysOfWeekCodes"
+      class="{{cssClassPrefix}}col-2 c-and-weekday-item"
+      [attr.item-value]="item.value">
+
+      <div class="{{cssClassPrefix}}form-check c-and-weekday-item-check">
+        <input
+          class="{{cssClassPrefix}}form-check-input c-and-weekday-item-field"
+          type="checkbox"
+          [attr.id]="genId(mode.AND, segment.dayOfWeek + item.value)"
+          [value]="item.value"
+          [disabled]="api.isDayOfWeekAndControlsDisabled()"
+          [checked]="api.isSelectedDayOfWeekAndValue(item.value)"
+          (click)="api.selectDayOfWeekAndValue(item.value)">
+
+        <label
+          class="{{cssClassPrefix}}form-check-label c-and-weekday-item-label"
+          [attr.for]="genId(mode.AND, segment.dayOfWeek + item.value)">
+          {{localizeLabel(item.label, localization.common.dayOfWeek)}}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<cron-range
+  [label]="localization.quartz.day.dayOfWeekRange.label1"
+  [label2]="localization.quartz.day.dayOfWeekRange.label2"
+  [cssClassPrefix]="cssClassPrefix"
+  [checked]="api.isDayOfWeekRangeSelected()"
+  [disabled]="cronUI.isDisabled()"
+  [segmentId]="genId(mode.RANGE)"
+  [disabledControls]="api.isDayOfWeekRangeControlsDisabled()"
+  [primaryOptions]="daysOfWeekCodes"
+  [secondaryOptions]="daysOfWeekCodes"
+  [primaryValue]="api.getDayOfWeekRangePrimary()"
+  [secondaryValue]="api.getDayOfWeekRangeSecondary()"
+  (selected)="api.selectDayOfWeekRange()"
+  (primaryValueChanged)="api.setDayOfWeekRangePrimary($event)"
+  (secondaryValueChanged)="api.setDayOfWeekRangeSecondary($event)">
+</cron-range>
+
+<div class="{{cssClassPrefix}}form-group c-and-monthday c-segment">
+  <div class="{{cssClassPrefix}}form-check c-and-monthday-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-and-monthday-option"
+      type="radio"
+      [attr.id]="genId(mode.AND, segment.dayOfMonth)"
+      [value]="mode.INCREMENT"
+      [checked]="api.isDayOfMonthAndSelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfMonthAnd()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-and-monthday-option-label"
+      [attr.for]="genId(mode.AND, segment.dayOfMonth)">
+
+      {{localization.quartz.day.dayOfMonthAnd.label}}
+    </label>
+  </div>
+
+  <div class="{{cssClassPrefix}}row {{cssClassPrefix}}pl-3 {{cssClassPrefix}}pt-1 c-and-monthday-list">
+    <div
+      *ngFor="let item of daysOfMonth"
+      class="{{cssClassPrefix}}col-1 c-and-monthday-item"
+      [attr.item-value]="item.value">
+
+      <div class="{{cssClassPrefix}}form-check c-and-monthday-item-check">
+        <input
+          class="{{cssClassPrefix}}form-check-input c-and-monthday-item-field"
+          type="checkbox"
+          [attr.id]="genId(mode.AND, segment.dayOfMonth + item.value)"
+          [value]="item.value"
+          [disabled]="api.isDayOfMonthAndControlsDisabled()"
+          [checked]="api.isSelectedDayOfMonthAndValue(item.value)"
+          (click)="api.selectDayOfMonthAndValue(item.value)">
+
+        <label
+          class="{{cssClassPrefix}}form-check-label c-and-monthday-item-label"
+          [attr.for]="genId(mode.AND, segment.dayOfMonth + item.value)">
+          {{item.label}}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="{{cssClassPrefix}}form-group c-last-monthday c-segment">
+  <div class="{{cssClassPrefix}}form-check c-last-monthday-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-last-monthday-option"
+      type="radio"
+      [attr.id]="genId(mode.LAST_DAY, segment.dayOfMonth)"
+      [value]="mode.LAST_DAY"
+      [checked]="api.isDayOfMonthLastDaySelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfMonthLastDay()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-last-monthday-option-label"
+      [attr.for]="genId(mode.LAST_DAY, segment.dayOfMonth)">
+
+      {{localization.quartz.day.dayOfMonthLastDay.label}}
+    </label>
+  </div>
+</div>
+
+<div class="{{cssClassPrefix}}form-group c-last-weekday c-segment">
+  <div class="{{cssClassPrefix}}form-check c-last-weekday-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-last-weekday-option"
+      type="radio"
+      [attr.id]="genId(mode.LAST_DAY_WEEK, segment.dayOfMonth)"
+      [value]="mode.LAST_DAY_WEEK"
+      [checked]="api.isDayOfMonthLastDayWeekSelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfMonthLastDayWeek()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-last-weekday-option-label"
+      [attr.for]="genId(mode.LAST_DAY_WEEK, segment.dayOfMonth)">
+
+      {{localization.quartz.day.dayOfMonthLastDayWeek.label}}
+    </label>
+  </div>
+</div>
+
+<div class="{{cssClassPrefix}}form-group {{cssClassPrefix}}form-inline c-last-nth c-segment">
+  <div class="{{cssClassPrefix}}form-check c-last-nth-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-last-nth-option"
+      type="radio"
+      [attr.id]="genId(mode.LAST_NTH_DAY_WEEK, segment.dayOfWeek)"
+      [value]="mode.LAST_NTH_DAY_WEEK"
+      [checked]="api.isDayOfWeekLastNTHDayWeekSelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfWeekLastNTHDayWeek()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-last-nth-option-label"
+      [attr.for]="genId(mode.LAST_NTH_DAY_WEEK, segment.dayOfWeek)">
+
+      {{localization.quartz.day.dayOfWeekLastNTHDayWeek.label1}}
+    </label>
+  </div>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-last-nth-weekday"
+    [disabled]="api.isDayOfWeekLastNTHDayWeekControlsDisabled()"
+    (change)="setDayOfWeekLastNTHDayWeekValue($event)">
+
+    <option
+      *ngFor="let item of daysOfWeek"
+      [value]="item.value + 'L'"
+      [selected]="api.getDayOfWeekLastNTHDayWeekValue() === item.value">
+      {{localizeLabel(item.label, localization.common.dayOfWeek)}}
+    </option>
+  </select>
+
+  <label
+    class="c-last-nth-option-label2"
+    [attr.for]="genId(mode.LAST_NTH_DAY_WEEK, segment.dayOfWeek)">
+    {{localization.quartz.day.dayOfWeekLastNTHDayWeek.label2}}
+  </label>
+</div>
+
+<div class="{{cssClassPrefix}}form-group {{cssClassPrefix}}form-inline c-day-before-end c-segment">
+  <div class="{{cssClassPrefix}}form-check c-day-before-end-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-day-before-end-option"
+      type="radio"
+      [attr.id]="genId(mode.DAYS_BEFORE_END_MONTH, segment.dayOfMonth)"
+      [value]="mode.DAYS_BEFORE_END_MONTH"
+      [checked]="api.isDayOfMonthDaysBeforeEndMonthSelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfMonthDaysBeforeEndMonth()">
+  </div>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-day-before-end-monthday"
+    [disabled]="api.isDayOfMonthDaysBeforeEndMonthControlsDisabled()"
+    (change)="setDayOfMonthDaysBeforeEndMonthValue($event)">
+
+    <option
+      *ngFor="let item of daysOfMonth"
+      [value]="'L-' + item.value"
+      [selected]="api.getDayOfMonthDaysBeforeEndMonthValue() === item.value">
+      {{item.label}}
+    </option>
+  </select>
+
+  <label
+    class="c-day-before-end-option-label"
+    [attr.for]="genId(mode.DAYS_BEFORE_END_MONTH, segment.dayOfMonth)">
+    {{localization.quartz.day.dayOfMonthDaysBeforeEndMonth.label}}
+  </label>
+</div>
+
+<div class="{{cssClassPrefix}}form-group {{cssClassPrefix}}form-inline c-nearest c-segment">
+  <div class="{{cssClassPrefix}}form-check c-nearest-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-nearest-option"
+      type="radio"
+      [attr.id]="genId(mode.NEAREST_WEEKDAY_OF_MONTH, segment.dayOfMonth)"
+      [value]="mode.NEAREST_WEEKDAY_OF_MONTH"
+      [checked]="api.isDayOfMonthNearestWeekDayOfMonthSelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfMonthNearestWeekDayOfMonth()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-nearest-option-label"
+      [attr.for]="genId(mode.NEAREST_WEEKDAY_OF_MONTH, segment.dayOfMonth)">
+
+      {{localization.quartz.day.dayOfMonthNearestWeekDayOfMonth.label1}}
+    </label>
+  </div>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-nearest-monthday"
+    [disabled]="api.isDayOfMonthNearestWeekDayOfMonthControlsDisabled()"
+    (change)="setDayOfMonthNearestWeekDayOfMonthValue($event)">
+
+    <option
+      *ngFor="let item of daysOfMonthEvery"
+      [value]="item.value + 'W'"
+      [selected]="api.getDayOfMonthNearestWeekDayOfMonthValue() === item.value">
+      {{localizeLabel(item.label, localization.common.dayOfMonth)}}
+    </option>
+  </select>
+
+  <label
+    class="c-nearest-option-label2"
+    [attr.for]="genId(mode.NEAREST_WEEKDAY_OF_MONTH, segment.dayOfMonth)">
+    {{localization.quartz.day.dayOfMonthNearestWeekDayOfMonth.label2}}
+  </label>
+</div>
+
+<div class="{{cssClassPrefix}}form-group {{cssClassPrefix}}form-inline c-nth c-segment">
+  <div class="{{cssClassPrefix}}form-check c-nth-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-nth-option"
+      type="radio"
+      [attr.id]="genId(mode.NTH_WEEKDAY_OF_MONTH, segment.dayOfWeek)"
+      [value]="mode.NTH_WEEKDAY_OF_MONTH"
+      [checked]="api.isDayOfWeekNTHWeekDayOfMonthSelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfWeekNTHWeekDayOfMonth()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-nth-option-label"
+      [attr.for]="genId(mode.NTH_WEEKDAY_OF_MONTH, segment.dayOfWeek)">
+
+      {{localization.quartz.day.dayOfWeekNTHWeekDayOfMonth.label1}}
+    </label>
+  </div>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-nth-every"
+    [disabled]="api.isDayOfWeekNTHWeekDayOfMonthControlsDisabled()"
+    (change)="setDayOfWeekNTHWeekDayOfMonthPrimaryValue($event)">
+
+    <option
+      *ngFor="let item of limitedDaysOfMonth"
+      [value]="item.value"
+      [selected]="api.getDayOfWeekNTHWeekDayOfMonthPrimaryValue() === item.value">
+      {{localizeLabel(item.label, localization.common.dayOfMonth)}}
+    </option>
+  </select>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-nth-every-weekday"
+    [disabled]="api.isDayOfWeekNTHWeekDayOfMonthControlsDisabled()"
+    (change)="setDayOfWeekNTHWeekDayOfMonthSecondaryValue($event)">
+
+    <option
+      *ngFor="let item of daysOfWeek"
+      [value]="item.value"
+      [selected]="api.getDayOfWeekNTHWeekDayOfMonthSecondaryValue() === item.value">
+      {{localizeLabel(item.label, localization.common.dayOfWeek)}}
+    </option>
+  </select>
+
+  <label
+    class="c-nth-option-label2"
+    [attr.for]="genId(mode.NTH_WEEKDAY_OF_MONTH, segment.dayOfWeek)">
+    {{localization.quartz.day.dayOfWeekNTHWeekDayOfMonth.label2}}
+  </label>
+</div>

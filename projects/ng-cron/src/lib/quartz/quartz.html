@@ -1,0 +1,58 @@
+<cron-container
+  hostClass="c-quartz"
+  [localization]="getLocalization()"
+  [tabs]="getTabs()"
+  [activeTab]="getActiveTab()"
+  [hideTabs]="hideTabs"
+  [cssClassPrefix]="cssClassPrefix"
+  (tabChanged)="tabChanged.emit($event)">
+
+  <ng-template
+    #content
+    let-activeTab>
+
+    <ng-container [ngSwitch]="activeTab">
+      <quartz-cron-month
+        *ngSwitchCase="type.MONTH"
+        [localization]="getLocalization()"
+        [cssClassPrefix]="cssClassPrefix"
+        (changed)="applyChanges()">
+      </quartz-cron-month>
+
+      <quartz-cron-minute
+        *ngSwitchCase="type.MINUTES"
+        [localization]="getLocalization()"
+        [cssClassPrefix]="cssClassPrefix"
+        (changed)="applyChanges()">
+      </quartz-cron-minute>
+
+      <quartz-cron-hour
+        *ngSwitchCase="type.HOURS"
+        [localization]="getLocalization()"
+        [cssClassPrefix]="cssClassPrefix"
+        (changed)="applyChanges()">
+      </quartz-cron-hour>
+
+      <quartz-cron-second
+        *ngSwitchCase="type.SECONDS"
+        [localization]="getLocalization()"
+        [cssClassPrefix]="cssClassPrefix"
+        (changed)="applyChanges()">
+      </quartz-cron-second>
+
+      <quartz-cron-year
+        *ngSwitchCase="type.YEAR"
+        [localization]="getLocalization()"
+        [cssClassPrefix]="cssClassPrefix"
+        (changed)="applyChanges()">
+      </quartz-cron-year>
+
+      <quartz-cron-day
+        *ngSwitchCase="type.DAY"
+        [localization]="getLocalization()"
+        [cssClassPrefix]="cssClassPrefix"
+        (changed)="applyChanges()">
+      </quartz-cron-day>
+    </ng-container>
+  </ng-template>
+</cron-container>

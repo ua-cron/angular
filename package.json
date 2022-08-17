@@ -25,6 +25,7 @@
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4",
+    "bootstrap": "^4.6.1",
     "@sbzen/cron-core": "2.0.0"
   },
   "devDependencies": {

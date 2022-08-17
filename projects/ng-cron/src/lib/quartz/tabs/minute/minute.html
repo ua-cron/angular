@@ -1,0 +1,55 @@
+<cron-every
+  [label]="localization.quartz.minute.every.label"
+  [cssClassPrefix]="cssClassPrefix"
+  [checked]="api.isEverySelected()"
+  [disabled]="cronUI.isDisabled()"
+  [segmentId]="genId(mode.EVERY)"
+  (selected)="api.selectEvery()">
+</cron-every>
+
+<quartz-cron-increment
+  [label]="localization.quartz.minute.increment.label1"
+  [label2]="localization.quartz.minute.increment.label2"
+  [cssClassPrefix]="cssClassPrefix"
+  [checked]="api.isIncrementSelected()"
+  [disabled]="cronUI.isDisabled()"
+  [segmentId]="genId(mode.INCREMENT)"
+  [disabledControls]="api.isIncrementControlsDisabled()"
+  [primaryOptions]="minuteCodes"
+  [secondaryOptions]="minutes"
+  [primaryValue]="api.getIncrementPrimaryValue()"
+  [secondaryValue]="api.getIncrementSecondaryValue()"
+  (selected)="api.selectIncrement()"
+  (primaryValueChanged)="api.setIncrementPrimaryValue($event)"
+  (secondaryValueChanged)="api.setIncrementSecondaryValue($event)">
+</quartz-cron-increment>
+
+<cron-and
+  [label]="localization.quartz.minute.and.label"
+  [cssClassPrefix]="cssClassPrefix"
+  [checked]="api.isAndSelected()"
+  [disabled]="cronUI.isDisabled()"
+  [segmentId]="genId(mode.AND)"
+  [options]="minutes"
+  [disabledControls]="api.isAndControlsDisabled()"
+  [isValueSelected]="api.isSelectedAndValue"
+  [selectValue]="api.selectAndValue"
+  (selected)="api.selectAnd()">
+</cron-and>
+
+<cron-range
+  [label]="localization.quartz.minute.range.label1"
+  [label2]="localization.quartz.minute.range.label2"
+  [cssClassPrefix]="cssClassPrefix"
+  [checked]="api.isRangeSelected()"
+  [disabled]="cronUI.isDisabled()"
+  [segmentId]="genId(mode.RANGE)"
+  [disabledControls]="api.isRangeControlsDisabled()"
+  [primaryOptions]="minutes"
+  [secondaryOptions]="minutes"
+  [primaryValue]="api.getRangePrimaryValue()"
+  [secondaryValue]="api.getRangeSecondaryValue()"
+  (selected)="api.selectRange()"
+  (primaryValueChanged)="api.setRangePrimaryValue($event)"
+  (secondaryValueChanged)="api.setRangeSecondaryValue($event)">
+</cron-range>

@@ -1,0 +1,18 @@
+<div class="{{cssClassPrefix}}form-group c-every c-segment">
+  <div class="{{cssClassPrefix}}form-check c-every-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-every-option"
+      type="radio"
+      [attr.id]="segmentId"
+      [value]="mode"
+      [checked]="checked"
+      [disabled]="disabled"
+      (change)="selected.emit()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-every-option-label"
+      [attr.for]="segmentId">
+      {{label}}
+    </label>
+  </div>
+</div>
