@@ -16,7 +16,8 @@
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
-    "publish-alpha": "npm publish ./dist/ng-cron --tag alpha --access=public"
+    "publish-alpha": "npm publish ./dist/ng-cron --tag alpha --access=public",
+    "publish": "npm publish ./dist/ng-cron --access=public"
   },
   "private": true,
   "dependencies": {

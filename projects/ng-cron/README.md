@@ -48,9 +48,7 @@ You need to import the QuartzCronModule that you want to display by adding the f
 import { QuartzCronModule } from '@sbzen/ng-cron';
 
 @NgModule ({
-	imports: [
-		QuartzCronModule
-	]
+  imports: [QuartzCronModule]
 })
 ```
 Add the cron component into yout template
