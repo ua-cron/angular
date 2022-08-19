@@ -31,7 +31,7 @@ export abstract class CronTabComponent implements OnInit, OnDestroy {
   }
 
   genId(mode: Mode, extra?: string) {
-    return `${mode}-${extra}${this.sessionId}`;
+    return `${mode}-${extra || ''}${this.sessionId}`;
   }
 
   localizeList(list: { value: string, label: string }[], localizationStore: { [key: string]: string }) {
