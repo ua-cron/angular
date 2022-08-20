@@ -1,0 +1,55 @@
+<cron-every
+  [label]="localization.quartz.hour.every.label"
+  [cssClassPrefix]="cssClassPrefix"
+  [checked]="api.isEverySelected()"
+  [disabled]="cronUI.isDisabled()"
+  [segmentId]="genId(mode.EVERY)"
+  (selected)="api.selectEvery()">
+</cron-every>
+
+<quartz-cron-increment
+  [label]="localization.quartz.hour.increment.label1"
+  [label2]="localization.quartz.hour.increment.label2"
+  [cssClassPrefix]="cssClassPrefix"
+  [checked]="api.isIncrementSelected()"
+  [disabled]="cronUI.isDisabled()"
+  [segmentId]="genId(mode.INCREMENT)"
+  [disabledControls]="api.isIncrementControlsDisabled()"
+  [primaryOptions]="hourCodes"
+  [secondaryOptions]="hours"
+  [primaryValue]="api.getIncrementPrimaryValue()"
+  [secondaryValue]="api.getIncrementSecondaryValue()"
+  (selected)="api.selectIncrement()"
+  (primaryValueChanged)="api.setIncrementPrimaryValue($event)"
+  (secondaryValueChanged)="api.setIncrementSecondaryValue($event)">
+</quartz-cron-increment>
+
+<cron-and
+  [label]="localization.quartz.hour.and.label"
+  [cssClassPrefix]="cssClassPrefix"
+  [checked]="api.isAndSelected()"
+  [disabled]="cronUI.isDisabled()"
+  [segmentId]="genId(mode.AND)"
+  [options]="hours"
+  [disabledControls]="api.isAndControlsDisabled()"
+  [isValueSelected]="api.isSelectedAndValue"
+  [selectValue]="api.selectAndValue"
+  (selected)="api.selectAnd()">
+</cron-and>
+
+<cron-range
+  [label]="localization.quartz.hour.range.label1"
+  [label2]="localization.quartz.hour.range.label2"
+  [cssClassPrefix]="cssClassPrefix"
+  [checked]="api.isRangeSelected()"
+  [disabled]="cronUI.isDisabled()"
+  [segmentId]="genId(mode.RANGE)"
+  [disabledControls]="api.isRangeControlsDisabled()"
+  [primaryOptions]="hours"
+  [secondaryOptions]="hours"
+  [primaryValue]="api.getRangePrimaryValue()"
+  [secondaryValue]="api.getRangeSecondaryValue()"
+  (selected)="api.selectRange()"
+  (primaryValueChanged)="api.setRangePrimaryValue($event)"
+  (secondaryValueChanged)="api.setRangeSecondaryValue($event)">
+</cron-range>

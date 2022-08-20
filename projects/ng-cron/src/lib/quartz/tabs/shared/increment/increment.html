@@ -1,0 +1,50 @@
+<div class="{{cssClassPrefix}}form-group {{cssClassPrefix}}form-inline c-increment c-segment">
+  <div class="{{cssClassPrefix}}form-check c-increment-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-increment-option"
+      type="radio"
+      [attr.id]="segmentId"
+      [value]="mode"
+      [checked]="checked"
+      [disabled]="disabled"
+      (change)="selected.emit()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-increment-option-label"
+      [attr.for]="segmentId">
+      {{label}}
+    </label>
+  </div>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-increment-every"
+    [disabled]="disabledControls"
+    (change)="setPrimaryValue($event)">
+
+    <option
+      *ngFor="let item of primaryOptions"
+      [value]="item.value"
+      [selected]="primaryValue === item.value">
+      {{item.value}}
+    </option>
+  </select>
+
+  <label
+    class="c-increment-option-label2"
+    [attr.for]="segmentId">
+    {{label2}}
+  </label>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}ml-1 c-increment-from"
+    [disabled]="disabledControls"
+    (change)="setSecondaryValue($event)">
+
+    <option
+      *ngFor="let item of secondaryOptions"
+      [value]="item.value"
+      [selected]="secondaryValue === item.value">
+      {{item.label}}
+    </option>
+  </select>
+</div>

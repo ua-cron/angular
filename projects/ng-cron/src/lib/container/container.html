@@ -1,0 +1,32 @@
+<div class="c-host {{hostClass}}">
+  <ul
+    *ngIf="!hideTabs && tabs.length"
+    class="{{cssClassPrefix}}nav {{cssClassPrefix}}nav-tabs {{cssClassPrefix}}mb-2 c-tabs"
+    role="tablist"
+    aria-label="Cron Generator Tabs">
+
+    <button
+      *ngFor="let item of tabs"
+      role="tab"
+      #tabEl
+      type="button"
+      class="{{cssClassPrefix}}nav-link {{item}} c-tab"
+      [class.active]="activeTab === item"
+      [attr.aria-selected]="activeTab === item"
+      [attr.tabindex]="activeTab === item ? 0 : -1"
+      (click)="setTab(item)"
+      (keyup)="navigateTab($event.code, activeTab)">
+
+      {{localization.tabs[tabsLocalizationKeys[item]]}}
+    </button>
+  </ul>
+
+  <div
+    class="c-tab-content"
+    role="tabpanel"
+    tabindex="0"
+    [attr.tab-name]="activeTab">
+
+    <ng-container *ngTemplateOutlet="content; context: { $implicit: activeTab }"></ng-container>
+  </div>
+</div>

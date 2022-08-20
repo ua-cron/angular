@@ -1,0 +1,43 @@
+<div class="{{cssClassPrefix}}form-group c-and c-segment">
+  <div class="{{cssClassPrefix}}form-check c-and-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-and-option"
+      type="radio"
+      [attr.id]="segmentId"
+      [value]="mode"
+      [checked]="checked"
+      [disabled]="disabled"
+      (change)="selected.emit()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-and-option-label"
+      [attr.for]="segmentId">
+      {{label}}
+    </label>
+  </div>
+
+  <div class="{{cssClassPrefix}}row {{cssClassPrefix}}pl-3 {{cssClassPrefix}}pt-1 c-and-list">
+    <div
+      *ngFor="let item of options"
+      class="{{getGridSizes()}} c-and-item"
+      [attr.item-value]="item.value">
+
+      <div class="{{cssClassPrefix}}form-check c-and-item-check">
+        <input
+          class="{{cssClassPrefix}}form-check-input c-and-item-field"
+          type="checkbox"
+          [attr.id]="segmentId + '_' + item.value"
+          [value]="item.value"
+          [disabled]="disabledControls"
+          [checked]="isValueSelected(item.value)"
+          (click)="changeValue($event, item.value)">
+
+        <label
+          class="{{cssClassPrefix}}form-check-label c-and-item-label"
+          [attr.for]="segmentId + '_' + item.value">
+          {{item.label}}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

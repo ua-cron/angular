@@ -1,0 +1,220 @@
+<div class="{{cssClassPrefix}}form-group c-every-weekday c-segment">
+  <div class="{{cssClassPrefix}}form-check c-every-weekday-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-every-weekday-option"
+      type="radio"
+      [attr.id]="genId(mode.EVERY, segment.dayOfWeek)"
+      [value]="mode.EVERY"
+      [checked]="api.isEverySelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectEvery()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-every-weekday-option-label"
+      [attr.for]="genId(mode.EVERY, segment.dayOfWeek)">
+
+      {{localization.unix.day.every.label}}
+    </label>
+  </div>
+</div>
+
+<div class="{{cssClassPrefix}}form-group {{cssClassPrefix}}form-inline c-increment-weekday c-segment">
+  <div class="{{cssClassPrefix}}form-check c-increment-weekday-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-increment-weekday-option"
+      type="radio"
+      [attr.id]="genId(mode.INCREMENT, segment.dayOfWeek)"
+      [value]="mode.INCREMENT"
+      [checked]="api.isDayOfWeekIncrementSelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfWeekIncrement()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-increment-weekday-option-label"
+      [attr.for]="genId(mode.INCREMENT, segment.dayOfWeek)">
+
+      {{localization.unix.day.dayOfWeekIncrement.label1}}
+    </label>
+  </div>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-increment-weekday-every"
+    [disabled]="api.isDayOfWeekIncrementControlsDisabled()"
+    (change)="setDayOfWeekIncrementPrimary($event)">
+
+    <option
+      *ngFor="let item of daysOfWeekEvery"
+      [value]="item.value"
+      [selected]="api.getDayOfWeekIncrementPrimary() === item.value">
+      {{item.value}}
+    </option>
+  </select>
+
+  <label
+    class="c-increment-weekday-option-label2"
+    [attr.for]="genId(mode.INCREMENT, segment.dayOfWeek)">
+    {{localization.unix.day.dayOfWeekIncrement.label2}}
+  </label>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-increment-weekday-from"
+    [disabled]="api.isDayOfWeekIncrementControlsDisabled()"
+    (change)="setDayOfWeekIncrementSecondary($event)">
+
+    <option
+      *ngFor="let item of daysOfWeek"
+      [value]="item.value"
+      [selected]="api.getDayOfWeekIncrementSecondary() === item.value">
+      {{localizeLabel(item.label, this.localization.common.dayOfWeek)}}
+    </option>
+  </select>
+</div>
+
+<div class="{{cssClassPrefix}}form-group {{cssClassPrefix}}form-inline c-increment-monthday c-segment">
+  <div class="{{cssClassPrefix}}form-check c-increment-monthday-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-increment-monthday-option"
+      type="radio"
+      [attr.id]="genId(mode.INCREMENT, segment.dayOfMonth)"
+      [value]="mode.INCREMENT"
+      [checked]="api.isDayOfMonthIncrementSelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfMonthIncrement()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-increment-monthday-option-label"
+      [attr.for]="genId(mode.INCREMENT, segment.dayOfMonth)">
+
+      {{localization.unix.day.dayOfMonthIncrement.label1}}
+    </label>
+  </div>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-increment-monthday-every"
+    [disabled]="api.isDayOfMonthIncrementControlsDisabled()"
+    (change)="setDayOfMonthIncrementPrimary($event)">
+
+    <option
+      *ngFor="let item of daysOfMonth"
+      [value]="item.value"
+      [selected]="api.getDayOfMonthIncrementPrimary() === item.value">
+      {{item.value}}
+    </option>
+  </select>
+
+  <label
+    class="c-increment-monthday-option-label2"
+    [attr.for]="genId(mode.INCREMENT, segment.dayOfMonth)">
+    {{localization.unix.day.dayOfMonthIncrement.label2}}
+  </label>
+
+  <select
+    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-increment-monthday-from"
+    [disabled]="api.isDayOfMonthIncrementControlsDisabled()"
+    (change)="setDayOfMonthIncrementSecondary($event)">
+
+    <option
+      *ngFor="let item of daysOfMonthEvery"
+      [value]="item.value"
+      [selected]="api.getDayOfMonthIncrementSecondary() === item.value">
+
+      {{localizeLabel(item.label, localization.common.dayOfMonth)}}
+    </option>
+  </select>
+
+  <label
+    class="c-increment-monthday-option-label3"
+    [attr.for]="genId(mode.INCREMENT, segment.dayOfMonth)">
+    {{localization.unix.day.dayOfMonthIncrement.label2}}
+  </label>
+</div>
+
+<div class="{{cssClassPrefix}}form-group c-and-weekday c-segment">
+  <div class="{{cssClassPrefix}}form-check c-and-weekday-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-and-weekday-option"
+      type="radio"
+      [attr.id]="genId(mode.AND, segment.dayOfWeek)"
+      [value]="mode.INCREMENT"
+      [checked]="api.isDayOfWeekAndSelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfWeekAnd()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-and-weekday-option-label"
+      [attr.for]="genId(mode.AND, segment.dayOfWeek)">
+
+      {{localization.unix.day.dayOfWeekAnd.label}}
+    </label>
+  </div>
+
+  <div class="{{cssClassPrefix}}row {{cssClassPrefix}}pl-3 {{cssClassPrefix}}pt-1 c-and-weekday-list">
+    <div
+      *ngFor="let item of daysOfWeekCodes"
+      class="{{cssClassPrefix}}col-3 {{cssClassPrefix}}col-md-2 c-and-weekday-item"
+      [attr.item-value]="item.value">
+
+      <div class="{{cssClassPrefix}}form-check c-and-weekday-item-check">
+        <input
+          class="{{cssClassPrefix}}form-check-input c-and-weekday-item-field"
+          type="checkbox"
+          [attr.id]="genId(mode.AND, segment.dayOfWeek + item.value)"
+          [value]="item.value"
+          [disabled]="api.isDayOfWeekAndControlsDisabled()"
+          [checked]="api.isSelectedDayOfWeekAndValue(item.value)"
+          (click)="api.selectDayOfWeekAndValue(item.value)">
+
+        <label
+          class="{{cssClassPrefix}}form-check-label c-and-weekday-item-label"
+          [attr.for]="genId(mode.AND, segment.dayOfWeek + item.value)">
+          {{localizeLabel(item.label, localization.common.dayOfWeek)}}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="{{cssClassPrefix}}form-group c-and-monthday c-segment">
+  <div class="{{cssClassPrefix}}form-check c-and-monthday-check">
+    <input
+      class="{{cssClassPrefix}}form-check-input c-and-monthday-option"
+      type="radio"
+      [attr.id]="genId(mode.AND, segment.dayOfMonth)"
+      [value]="mode.INCREMENT"
+      [checked]="api.isDayOfMonthAndSelected()"
+      [disabled]="cronUI.isDisabled()"
+      (change)="api.selectDayOfMonthAnd()">
+
+    <label
+      class="{{cssClassPrefix}}form-check-label c-and-monthday-option-label"
+      [attr.for]="genId(mode.AND, segment.dayOfMonth)">
+
+      {{localization.unix.day.dayOfMonthAnd.label}}
+    </label>
+  </div>
+
+  <div class="{{cssClassPrefix}}row {{cssClassPrefix}}pl-3 {{cssClassPrefix}}pt-1 c-and-monthday-list">
+    <div
+      *ngFor="let item of daysOfMonth"
+      class="{{cssClassPrefix}}col-2 {{cssClassPrefix}}col-md-1 c-and-monthday-item"
+      [attr.item-value]="item.value">
+
+      <div class="{{cssClassPrefix}}form-check c-and-monthday-item-check">
+        <input
+          class="{{cssClassPrefix}}form-check-input c-and-monthday-item-field"
+          type="checkbox"
+          [attr.id]="genId(mode.AND, segment.dayOfMonth + item.value)"
+          [value]="item.value"
+          [disabled]="api.isDayOfMonthAndControlsDisabled()"
+          [checked]="api.isSelectedDayOfMonthAndValue(item.value)"
+          (click)="api.selectDayOfMonthAndValue(item.value)">
+
+        <label
+          class="{{cssClassPrefix}}form-check-label c-and-monthday-item-label"
+          [attr.for]="genId(mode.AND, segment.dayOfMonth + item.value)">
+          {{item.label}}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

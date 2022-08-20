@@ -1,0 +1,94 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ng-cron": {
+      "projectType": "library",
+      "root": "projects/ng-cron",
+      "sourceRoot": "projects/ng-cron/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ng-cron/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-cron/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ng-cron/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "browserTarget": "ng-cron:build",
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "browserTarget": "ng-cron:build"
+          }
+        }
+      }
+    },
+    "e2e": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/e2e",
+      "sourceRoot": "projects/e2e/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/e2e",
+            "index": "projects/e2e/src/index.html",
+            "main": "projects/e2e/src/main.ts",
+            "polyfills": "projects/e2e/src/polyfills.ts",
+            "tsConfig": "projects/e2e/tsconfig.app.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/e2e/src/environments/environment.ts",
+                  "with": "projects/e2e/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "e2e:build:production"
+            },
+            "development": {
+              "browserTarget": "e2e:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    }
+  }
+}
