@@ -1,34 +1,5 @@
 <container
-  type="ReCron"
-  value="0,1,2 2/4 6/2 ? 2-7 SUN,MON 2019/1"
-  #reCronContainer>
-
-  <ng-template
-    #content
-    let-value="value"
-    let-cssClassPrefix="cssClassPrefix"
-    let-localization="localization"
-    let-activeTab="activeTab"
-    let-tabs="tabs"
-    let-hideTabs="hideTabs"
-    let-disabled="disabled">
-
-    <quartz-cron
-      [cssClassPrefix]="cssClassPrefix"
-      [localization]="localization"
-      [activeTab]="activeTab"
-      [tabs]="tabs"
-      [hideTabs]="hideTabs"
-      [disabled]="disabled"
-      [ngModel]="value"
-      (changed)="reCronContainer.updateValue($event)"
-      (tabChanged)="reCronContainer.updateActiveTab($event)">
-    </quartz-cron>
-  </ng-template>
-</container>
-
-<container
-  type="ReQuartzCron"
+  type="QuartzCron"
   value="0,1,2 2/4 6/2 ? 2-7 SUN,MON 2019/1"
   #quartzContainer>
 
@@ -57,7 +28,7 @@
 </container>
 
 <container
-  type="ReUnixCron"
+  type="UnixCron"
   value="0 4 8-14 * *"
   [initialTabs]="[tab.MINUTES, tab.HOURS, tab.DAY, tab.MONTH]"
   #unixContainer>

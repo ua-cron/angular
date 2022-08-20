@@ -53,30 +53,10 @@
             "index": "projects/e2e/src/index.html",
             "main": "projects/e2e/src/main.ts",
             "polyfills": "projects/e2e/src/polyfills.ts",
-            "tsConfig": "projects/e2e/tsconfig.app.json",
-            "assets": [
-              "projects/e2e/src/favicon.ico",
-              "projects/e2e/src/assets"
-            ],
-            "styles": [
-              "projects/e2e/src/styles.css"
-            ],
-            "scripts": []
+            "tsConfig": "projects/e2e/tsconfig.app.json"
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
               "fileReplacements": [
                 {
                   "replace": "projects/e2e/src/environments/environment.ts",

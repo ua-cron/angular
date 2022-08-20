@@ -27,7 +27,7 @@ export class CronAndComponent {
 
   getGridSizes() {
     return this.gridSize
-      .map(s => `${this.cssClassPrefix}${s}`)
+      .map(s => `${this.cssClassPrefix || ''}${s}`)
       .join(' ');
   }
 
