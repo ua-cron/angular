@@ -11,7 +11,7 @@ Please check our [demo & documentation](https://ngcron.emptyui.com/) and the lis
 	<a href="https://ngcron.emptyui.com/">
 		<img
 			width="200"
-			src="https://bzenkosergey.github.io/ng-cron/angular/assets/logo.png"
+			src="https://res.cloudinary.com/dwkakr4wt/image/upload/v1661086526/cron/ngcron.png"
 			alt="ng-cron">
 	</a>
 </p>
