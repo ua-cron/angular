@@ -1,7 +1,7 @@
-<div class="{{cssClassPrefix}}form-group c-and c-segment">
-  <div class="{{cssClassPrefix}}form-check c-and-check">
+<div class="{{schema.formGroup}} c-and c-segment">
+  <div class="{{schema.check.root}} c-and-check">
     <input
-      class="{{cssClassPrefix}}form-check-input c-and-option"
+      class="{{schema.check.field}} c-and-option"
       type="radio"
       [attr.id]="segmentId"
       [value]="mode"
@@ -10,21 +10,21 @@
       (change)="selected.emit()">
 
     <label
-      class="{{cssClassPrefix}}form-check-label c-and-option-label"
+      class="{{schema.check.label}} c-and-option-label"
       [attr.for]="segmentId">
       {{label}}
     </label>
   </div>
 
-  <div class="{{cssClassPrefix}}row {{cssClassPrefix}}pl-3 {{cssClassPrefix}}pt-1 c-and-list">
+  <div class="{{schema.check.row}} c-and-list">
     <div
       *ngFor="let item of options"
-      class="{{getGridSizes()}} c-and-item"
+      class="{{gridSize || (schema.col2 + ' ' + schema.colMd1)}} c-and-item"
       [attr.item-value]="item.value">
 
-      <div class="{{cssClassPrefix}}form-check c-and-item-check">
+      <div class="{{schema.check.root}} c-and-item-check">
         <input
-          class="{{cssClassPrefix}}form-check-input c-and-item-field"
+          class="{{schema.check.field}} c-and-item-field"
           type="checkbox"
           [attr.id]="segmentId + '_' + item.value"
           [value]="item.value"
@@ -33,7 +33,7 @@
           (click)="changeValue($event, item.value)">
 
         <label
-          class="{{cssClassPrefix}}form-check-label c-and-item-label"
+          class="{{schema.check.label}} c-and-item-label"
           [attr.for]="segmentId + '_' + item.value">
           {{item.label}}
         </label>

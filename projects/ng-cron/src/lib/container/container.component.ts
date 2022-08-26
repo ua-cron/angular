@@ -2,6 +2,7 @@ import { Component, ContentChild, TemplateRef, ChangeDetectionStrategy, Input, C
 import { Type } from '@sbzen/cron-core';
 
 import { CronLocalization } from './../cron-localization';
+import { CronClassesSchema } from './../styles';
 
 @Component({
   selector: 'cron-container',
@@ -14,11 +15,11 @@ export class CronContainerComponent {
   @ViewChildren('tabEl', { read: ElementRef }) tabEls: QueryList<ElementRef>|null = null;
   @Output() readonly tabChanged = new EventEmitter<Type>();
   @Input() localization!: Required<CronLocalization>;
-  @Input() cssClassPrefix = '';
   @Input() hostClass = '';
   @Input() activeTab = Type.MINUTES;
   @Input() tabs: Type[] = [];
   @Input() hideTabs = false;
+  @Input() schema!: CronClassesSchema;
 
   readonly tabsLocalizationKeys = {
     [Type.DAY]: 'day',

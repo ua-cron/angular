@@ -7,8 +7,8 @@ const beforeEachCb = () => beforeEach(() => {
   })
 });
 
-activeTab(beforeEachCb);
 cssClasses(beforeEachCb);
+activeTab(beforeEachCb);
 localization(beforeEachCb);
 disabled(beforeEachCb);
 tabChange(beforeEachCb);

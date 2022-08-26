@@ -2,6 +2,8 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
 
 import { Mode } from '@sbzen/cron-core';
 
+import { CronClassesSchema } from './../../../../styles';
+
 @Component({
   selector: 'quartz-cron-increment',
   templateUrl: './increment.html',
@@ -11,7 +13,6 @@ export class QuartzCronIncrementComponent {
   @Output() readonly selected = new EventEmitter<void>();
   @Output() readonly primaryValueChanged = new EventEmitter<string>();
   @Output() readonly secondaryValueChanged = new EventEmitter<string>();
-  @Input() cssClassPrefix = '';
   @Input() segmentId = '';
   @Input() checked = false;
   @Input() disabled = false;
@@ -28,6 +29,7 @@ export class QuartzCronIncrementComponent {
     label: string|number,
     value: string
   }[] = [];
+  @Input() schema!: CronClassesSchema;
   readonly mode = Mode.INCREMENT;
 
   setPrimaryValue(e: Event) {

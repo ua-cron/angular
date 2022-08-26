@@ -1,7 +1,7 @@
-<div class="{{cssClassPrefix}}form-group {{cssClassPrefix}}form-inline c-range c-segment">
-  <div class="{{cssClassPrefix}}form-check c-range-check">
+<div class="{{schema.formGroup}} {{schema.formInline}} c-range c-segment">
+  <div class="{{schema.check.root}} c-range-check">
     <input
-      class="{{cssClassPrefix}}form-check-input c-range-option"
+      class="{{schema.check.field}} c-range-option"
       type="radio"
       [attr.id]="segmentId"
       [value]="mode"
@@ -10,14 +10,14 @@
       (change)="selected.emit()">
 
     <label
-      class="{{cssClassPrefix}}form-check-label c-range-option-label"
+      class="{{schema.check.label}} c-range-option-label"
       [attr.for]="segmentId">
       {{label}}
     </label>
   </div>
 
   <select
-    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-range-from"
+    class="{{schema.formControl}} {{schema.mx1}} c-range-from"
     [disabled]="disabledControls"
     (change)="setPrimaryValue($event)">
 
@@ -36,7 +36,7 @@
   </label>
 
   <select
-    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}ml-1 c-range-to"
+    class="{{schema.formControl}} {{schema.ml1}} c-range-to"
     [disabled]="disabledControls"
     (change)="setSecondaryValue($event)">
 

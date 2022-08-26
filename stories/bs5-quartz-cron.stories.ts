@@ -3,22 +3,22 @@ import { action } from '@storybook/addon-actions';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { UnixCronModule, Tab } from './../projects/ng-cron/src/public-api';
-import { UnixCronComponent } from './unix-cron.component';
+import { Bs5QuartzCronModule, Tab } from './../projects/ng-cron/src/public-api';
+import { Bs5QuartzCronComponent } from './bs5-quartz-cron.component';
 
 export default {
-  title: 'Unix Cron',
+  title: 'Bootstrap5 - Quartz Cron',
   decorators: [
     moduleMetadata({
       imports: [
         CommonModule,
         FormsModule,
-        UnixCronModule
+        Bs5QuartzCronModule
       ],
-      declarations: [UnixCronComponent]
+      declarations: [Bs5QuartzCronComponent]
     })
   ],
-  component: UnixCronComponent,
+  component: Bs5QuartzCronComponent,
   argTypes: {
     tabs: {
       control: 'inline-check',
@@ -57,7 +57,7 @@ export default {
   }
 } as Meta;
 
-const Template: Story<UnixCronComponent> = (args: UnixCronComponent) => ({
+const Template: Story<Bs5QuartzCronComponent> = (args: Bs5QuartzCronComponent) => ({
   props: {
     ...args,
     changed: action('changed'),

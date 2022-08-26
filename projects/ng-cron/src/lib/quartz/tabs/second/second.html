@@ -1,6 +1,6 @@
 <cron-every
   [label]="localization.quartz.second.every.label"
-  [cssClassPrefix]="cssClassPrefix"
+  [schema]="schema"
   [checked]="api.isEverySelected()"
   [disabled]="cronUI.isDisabled()"
   [segmentId]="genId(mode.EVERY)"
@@ -10,7 +10,7 @@
 <quartz-cron-increment
   [label]="localization.quartz.second.increment.label1"
   [label2]="localization.quartz.second.increment.label2"
-  [cssClassPrefix]="cssClassPrefix"
+  [schema]="schema"
   [checked]="api.isIncrementSelected()"
   [disabled]="cronUI.isDisabled()"
   [segmentId]="genId(mode.INCREMENT)"
@@ -26,7 +26,7 @@
 
 <cron-and
   [label]="localization.quartz.second.and.label"
-  [cssClassPrefix]="cssClassPrefix"
+  [schema]="schema"
   [checked]="api.isAndSelected()"
   [disabled]="cronUI.isDisabled()"
   [segmentId]="genId(mode.AND)"
@@ -40,7 +40,7 @@
 <cron-range
   [label]="localization.quartz.second.range.label1"
   [label2]="localization.quartz.second.range.label2"
-  [cssClassPrefix]="cssClassPrefix"
+  [schema]="schema"
   [checked]="api.isRangeSelected()"
   [disabled]="cronUI.isDisabled()"
   [segmentId]="genId(mode.RANGE)"

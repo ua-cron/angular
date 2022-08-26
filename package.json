@@ -31,7 +31,8 @@
     "@angular/router": "^14.1.0",
     "@sbzen/cron-core": "2.0.1",
     "@sbzen/ng-cron": "file:dist/ng-cron",
-    "bootstrap": "^4.6.1",
+    "bootstrap": "^5.2.0",
+    "bootstrap-legacy": "npm:bootstrap@^4.6.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -42,7 +43,7 @@
     "@angular/compiler-cli": "^14.1.0",
     "@babel/core": "^7.18.10",
     "@compodoc/compodoc": "^1.1.19",
-    "@sbzen/e2e": "https://github.com/ua-cron/e2e/releases/download/20220822040446/dist.tar.gz",
+    "@sbzen/e2e": "https://github.com/ua-cron/e2e/releases/download/20220827045910/dist.tar.gz",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-interactions": "^6.5.10",
