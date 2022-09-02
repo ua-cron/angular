@@ -56,3 +56,62 @@
     </unix-cron>
   </ng-template>
 </container>
+
+<container
+  type="Bs5QuartzCron"
+  value="0,1,2 2/4 6/2 ? 2-7 SUN,MON 2019/1"
+  #bs5QuartzContainer>
+
+  <ng-template
+    #content
+    let-value="value"
+    let-cssClassPrefix="cssClassPrefix"
+    let-localization="localization"
+    let-activeTab="activeTab"
+    let-tabs="tabs"
+    let-hideTabs="hideTabs"
+    let-disabled="disabled">
+
+    <bs5-quartz-cron
+      [cssClassPrefix]="cssClassPrefix"
+      [localization]="localization"
+      [activeTab]="activeTab"
+      [tabs]="tabs"
+      [hideTabs]="hideTabs"
+      [disabled]="disabled"
+      [ngModel]="value"
+      (changed)="bs5QuartzContainer.updateValue($event)"
+      (tabChanged)="bs5QuartzContainer.updateActiveTab($event)">
+    </bs5-quartz-cron>
+  </ng-template>
+</container>
+
+<container
+  type="Bs5UnixCron"
+  value="0 4 8-14 * *"
+  [initialTabs]="[tab.MINUTES, tab.HOURS, tab.DAY, tab.MONTH]"
+  #bs5UnixContainer>
+
+  <ng-template
+    #content
+    let-value="value"
+    let-cssClassPrefix="cssClassPrefix"
+    let-localization="localization"
+    let-activeTab="activeTab"
+    let-tabs="tabs"
+    let-hideTabs="hideTabs"
+    let-disabled="disabled">
+
+    <bs5-unix-cron
+      [cssClassPrefix]="cssClassPrefix"
+      [localization]="localization"
+      [activeTab]="activeTab"
+      [tabs]="tabs"
+      [hideTabs]="hideTabs"
+      [disabled]="disabled"
+      [ngModel]="value"
+      (changed)="bs5UnixContainer.updateValue($event)"
+      (tabChanged)="bs5UnixContainer.updateActiveTab($event)">
+    </bs5-unix-cron>
+  </ng-template>
+</container>

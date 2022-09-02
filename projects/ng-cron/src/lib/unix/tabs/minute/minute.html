@@ -1,6 +1,6 @@
 <cron-every
   [label]="localization.unix.minute.every.label"
-  [cssClassPrefix]="cssClassPrefix"
+  [schema]="schema"
   [checked]="api.isEverySelected()"
   [disabled]="cronUI.isDisabled()"
   [segmentId]="genId(mode.EVERY)"
@@ -10,7 +10,7 @@
 <unix-cron-increment
   [label]="localization.unix.minute.increment.label1"
   [label2]="localization.unix.minute.increment.label2"
-  [cssClassPrefix]="cssClassPrefix"
+  [schema]="schema"
   [checked]="api.isIncrementSelected()"
   [disabled]="cronUI.isDisabled()"
   [segmentId]="genId(mode.INCREMENT)"
@@ -23,7 +23,7 @@
 
 <cron-and
   [label]="localization.unix.minute.and.label"
-  [cssClassPrefix]="cssClassPrefix"
+  [schema]="schema"
   [checked]="api.isAndSelected()"
   [disabled]="cronUI.isDisabled()"
   [segmentId]="genId(mode.AND)"
@@ -37,7 +37,7 @@
 <cron-range
   [label]="localization.unix.minute.range.label1"
   [label2]="localization.unix.minute.range.label2"
-  [cssClassPrefix]="cssClassPrefix"
+  [schema]="schema"
   [checked]="api.isRangeSelected()"
   [disabled]="cronUI.isDisabled()"
   [segmentId]="genId(mode.RANGE)"

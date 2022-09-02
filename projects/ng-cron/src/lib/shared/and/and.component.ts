@@ -1,6 +1,8 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { Mode } from '@sbzen/cron-core';
 
+import { CronClassesSchema } from './../../styles';
+
 @Component({
   selector: 'cron-and',
   templateUrl: './and.html',
@@ -8,11 +10,10 @@ import { Mode } from '@sbzen/cron-core';
 })
 export class CronAndComponent {
   @Output() readonly selected = new EventEmitter<void>();
-  @Input() cssClassPrefix = '';
   @Input() checked = false;
   @Input() disabled = false;
   @Input() disabledControls = false;
-  @Input() gridSize = ['col-2', 'col-md-1'];
+  @Input() gridSize?: string;
   @Input() label = '';
   @Input() segmentId = '';
   @Input() options: {
@@ -21,15 +22,10 @@ export class CronAndComponent {
   }[] = [];
   @Input() isValueSelected: (value: string) => boolean = () => false;
   @Input() selectValue: (value: string) => boolean = () => false;
+  @Input() schema!: CronClassesSchema;
   readonly mode = Mode.AND;
 
   constructor(private readonly cd: ChangeDetectorRef) {}
-
-  getGridSizes() {
-    return this.gridSize
-      .map(s => `${this.cssClassPrefix || ''}${s}`)
-      .join(' ');
-  }
 
   changeValue(e: Event, value: string) {
     const status = this.selectValue(value);

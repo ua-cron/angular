@@ -1,15 +1,17 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
 import { Tab, CronLocalization } from './../projects/ng-cron/src/public-api';
 
 @Component({
-  selector: 'storybook-quartz-cron',
+  selector: 'storybook-bs4-unix-cron',
+  styleUrls: ['../node_modules/bootstrap-legacy/scss/bootstrap.scss'],
+  encapsulation: ViewEncapsulation.None,
   template: `
     <input
       class="form-control mb-2"
       readonly
       [value]="value">
 
-    <quartz-cron
+    <unix-cron
       name="cron"
       [cssClassPrefix]="cssClassPrefix"
       [activeTab]="activeTab"
@@ -20,10 +22,10 @@ import { Tab, CronLocalization } from './../projects/ng-cron/src/public-api';
       [(ngModel)]="value"
       (changed)="changed.emit($event)"
       (tabChanged)="tabChanged.emit($event)">
-    </quartz-cron>
+    </unix-cron>
   `,
 })
-export class QuartzCronComponent {
+export class Bs4UnixCronComponent {
   @Output() readonly changed = new EventEmitter<string>();
   @Output() readonly tabChanged = new EventEmitter<Tab>();
   @Input() cssClassPrefix?: string;

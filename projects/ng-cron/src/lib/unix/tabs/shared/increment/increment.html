@@ -1,7 +1,7 @@
-<div class="{{cssClassPrefix}}form-group {{cssClassPrefix}}form-inline c-increment c-segment">
-  <div class="{{cssClassPrefix}}form-check c-increment-check">
+<div class="{{schema.formGroup}} {{schema.formInline}} c-increment c-segment">
+  <div class="{{schema.check.root}} c-increment-check">
     <input
-      class="{{cssClassPrefix}}form-check-input c-increment-option"
+      class="{{schema.check.field}} c-increment-option"
       type="radio"
       [attr.id]="segmentId"
       [value]="mode"
@@ -10,14 +10,14 @@
       (change)="selected.emit()">
 
     <label
-      class="{{cssClassPrefix}}form-check-label c-increment-option-label"
+      class="{{schema.check.label}} c-increment-option-label"
       [attr.for]="segmentId">
       {{label}}
     </label>
   </div>
 
   <select
-    class="{{cssClassPrefix}}form-control {{cssClassPrefix}}form-control-sm {{cssClassPrefix}}mx-1 c-increment-every"
+    class="{{schema.formControl}} {{schema.mx1}} c-increment-every"
     [disabled]="disabledControls"
     (change)="setPrimaryValue($event)">
 

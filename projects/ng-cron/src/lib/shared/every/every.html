@@ -1,7 +1,7 @@
-<div class="{{cssClassPrefix}}form-group c-every c-segment">
-  <div class="{{cssClassPrefix}}form-check c-every-check">
+<div class="{{schema.formGroup}} c-every c-segment">
+  <div class="{{schema.check.root}} c-every-check">
     <input
-      class="{{cssClassPrefix}}form-check-input c-every-option"
+      class="{{schema.check.field}} c-every-option"
       type="radio"
       [attr.id]="segmentId"
       [value]="mode"
@@ -10,7 +10,7 @@
       (change)="selected.emit()">
 
     <label
-      class="{{cssClassPrefix}}form-check-label c-every-option-label"
+      class="{{schema.check.label}} c-every-option-label"
       [attr.for]="segmentId">
       {{label}}
     </label>

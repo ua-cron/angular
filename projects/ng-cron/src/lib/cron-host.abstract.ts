@@ -1,15 +1,16 @@
-import { Directive, Input, Output, EventEmitter } from '@angular/core';
+import { Directive, Input, Output, EventEmitter, ChangeDetectorRef, OnChanges, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { Type, CronUnixUIService, CronQuartzUIService } from '@sbzen/cron-core';
 
 import { CronLocalization, localization, DeepPartial } from './cron-localization';
+import { CronClassesSchema, generateSchema } from './styles';
 
 type RawObject = DeepPartial<{
 	[key: string]: string|RawObject;
 }>;
 
 @Directive()
-export abstract class CronHostComponent implements ControlValueAccessor {
+export abstract class CronHostComponent implements ControlValueAccessor, OnChanges {
   @Output() readonly changed = new EventEmitter<string>();
   @Output() readonly tabChanged = new EventEmitter<Type>();
   @Input() cssClassPrefix = '';
@@ -24,13 +25,28 @@ export abstract class CronHostComponent implements ControlValueAccessor {
 
   protected onChange: ((cronValue: string) => {})|null = null;
   protected onTouched: (() => {})|null = null;
-
   readonly type = Type;
+  schema: CronClassesSchema;
 
   constructor(
+    private readonly cd: ChangeDetectorRef,
     private readonly cronUI: CronUnixUIService|CronQuartzUIService,
-    private readonly initialTabs: Type[]
-  ) {}
+    private readonly initialTabs: Type[],
+    private readonly styles: CronClassesSchema
+  ) {
+    this.schema = generateSchema(styles, this.cssClassPrefix);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    const cssClassPrefix = changes['cssClassPrefix'];
+    const shouldUpdate = (
+      cssClassPrefix && cssClassPrefix.currentValue !== cssClassPrefix.previousValue
+    );
+    if (shouldUpdate) {
+      this.schema = generateSchema(this.styles, this.cssClassPrefix);
+      this.cd.detectChanges();
+    }
+  }
 
   writeValue(cronValue: string) {
     this.cronUI.fillFromExpression(cronValue || '');

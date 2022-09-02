@@ -1,13 +1,14 @@
 import { Directive, Input, ChangeDetectorRef, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import { Mode, Segment, CronUnixUIService, CronQuartzUIService } from '@sbzen/cron-core';
 
+import { CronClassesSchema } from './styles';
 import { FullCronLocalization } from './cron-localization';
 
 @Directive()
 export abstract class CronTabComponent implements OnInit, OnDestroy {
   @Output() readonly changed = new EventEmitter<never>();
   @Input() localization!: FullCronLocalization;
-  @Input() cssClassPrefix = '';
+  @Input() schema!: CronClassesSchema;
 
   private readonly sessionId = Date.now().toString();
   private unListener: (() => void)|null = null;

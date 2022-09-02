@@ -3,29 +3,29 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Type, CronQuartzUIService } from '@sbzen/cron-core';
 
 import { CronHostComponent } from './../cron-host.abstract';
-import { cronBootstrap4 } from './../styles';
+import { cronBootstrap5 } from './../styles';
 
-export function quartzCronServiceFactory() {
+export function bs5QuartzCronServiceFactory() {
   return new CronQuartzUIService();
 };
 
 @Component({
-  selector: 'quartz-cron',
-  templateUrl: './quartz.html',
+  selector: 'bs5-quartz-cron',
+  templateUrl: './../quartz/quartz.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: CronQuartzUIService,
-      useFactory: quartzCronServiceFactory
+      useFactory: bs5QuartzCronServiceFactory
     },
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => QuartzCronComponent),
+      useExisting: forwardRef(() => Bs5QuartzCronComponent),
       multi: true
     }
   ]
 })
-export class QuartzCronComponent extends CronHostComponent {
+export class Bs5QuartzCronComponent extends CronHostComponent {
   constructor(
     cd: ChangeDetectorRef,
     cronQuartzUI: CronQuartzUIService
@@ -41,7 +41,7 @@ export class QuartzCronComponent extends CronHostComponent {
         Type.MONTH,
         Type.YEAR
       ],
-      cronBootstrap4
+      cronBootstrap5
     );
   }
 }

@@ -4,7 +4,7 @@
   [tabs]="getTabs()"
   [activeTab]="getActiveTab()"
   [hideTabs]="hideTabs"
-  [cssClassPrefix]="cssClassPrefix"
+  [schema]="schema"
   (tabChanged)="tabChanged.emit($event)">
 
   <ng-template
@@ -15,28 +15,28 @@
       <unix-cron-month
         *ngSwitchCase="type.MONTH"
         [localization]="getLocalization()"
-        [cssClassPrefix]="cssClassPrefix"
+        [schema]="schema"
         (changed)="applyChanges()">
       </unix-cron-month>
 
       <unix-cron-minute
         *ngSwitchCase="type.MINUTES"
         [localization]="getLocalization()"
-        [cssClassPrefix]="cssClassPrefix"
+        [schema]="schema"
         (changed)="applyChanges()">
       </unix-cron-minute>
 
       <unix-cron-hour
         *ngSwitchCase="type.HOURS"
         [localization]="getLocalization()"
-        [cssClassPrefix]="cssClassPrefix"
+        [schema]="schema"
         (changed)="applyChanges()">
       </unix-cron-hour>
 
       <unix-cron-day
         *ngSwitchCase="type.DAY"
         [localization]="getLocalization()"
-        [cssClassPrefix]="cssClassPrefix"
+        [schema]="schema"
         (changed)="applyChanges()">
       </unix-cron-day>
     </ng-container>
