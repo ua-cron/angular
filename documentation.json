@@ -1452,7 +1452,7 @@
         },
         {
             "name": "Bs5QuartzCronComponent",
-            "id": "component-Bs5QuartzCronComponent-0af383e5a1fef7e895072c18b5c3047842bb62213dce0c666df78fbb554141e0173da78a22cf73b6ca631b2f7ee5bb68fb42ab36e88b7e96161e8159dd9c0aef",
+            "id": "component-Bs5QuartzCronComponent-1aab0c6309bb3f23aaab22fb82b67d0ce47152bbec0dd7970a53d04d247da876ae28b57eaf225baf832899d0bd6b4914b9e1a22833866e9bd4117c5edba1c74c",
             "file": "stories/bs5-quartz-cron.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -1466,7 +1466,7 @@
                 "../node_modules/bootstrap/scss/bootstrap.scss"
             ],
             "styles": [],
-            "template": "<input\n  class=\"form-control mb-2\"\n  readonly\n  [value]=\"value\">\n\n<bs5-quartz-cron\n  name=\"cron\"\n  [schema]=\"cronBootstrap5\"\n  [cssClassPrefix]=\"cssClassPrefix\"\n  [activeTab]=\"activeTab\"\n  [tabs]=\"tabs\"\n  [hideTabs]=\"hideTabs\"\n  [localization]=\"localization\"\n  [disabled]=\"disabled\"\n  [(ngModel)]=\"value\"\n  (changed)=\"changed.emit($event)\"\n  (tabChanged)=\"tabChanged.emit($event)\">\n</bs5-quartz-cron>\n",
+            "template": "<input\n  class=\"form-control mb-2\"\n  readonly\n  [value]=\"value\">\n\n<bs5-quartz-cron\n  name=\"cron\"\n  [cssClassPrefix]=\"cssClassPrefix\"\n  [activeTab]=\"activeTab\"\n  [tabs]=\"tabs\"\n  [hideTabs]=\"hideTabs\"\n  [localization]=\"localization\"\n  [disabled]=\"disabled\"\n  [(ngModel)]=\"value\"\n  (changed)=\"changed.emit($event)\"\n  (tabChanged)=\"tabChanged.emit($event)\">\n</bs5-quartz-cron>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -1474,7 +1474,7 @@
                     "name": "activeTab",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 33,
+                    "line": 32,
                     "type": "Tab",
                     "decorators": []
                 },
@@ -1482,7 +1482,7 @@
                     "name": "cssClassPrefix",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 31,
                     "type": "string",
                     "decorators": []
                 },
@@ -1490,7 +1490,7 @@
                     "name": "disabled",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 38,
+                    "line": 37,
                     "type": "string | null | boolean",
                     "decorators": []
                 },
@@ -1498,7 +1498,7 @@
                     "name": "hideTabs",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 35,
+                    "line": 34,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1506,7 +1506,7 @@
                     "name": "localization",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 35,
                     "type": "CronLocalization",
                     "decorators": []
                 },
@@ -1514,7 +1514,7 @@
                     "name": "tabs",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 34,
+                    "line": 33,
                     "type": "Tab[]",
                     "decorators": []
                 },
@@ -1523,7 +1523,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 37,
+                    "line": 36,
                     "type": "string",
                     "decorators": []
                 }
@@ -1534,7 +1534,7 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
+                    "line": 29,
                     "type": "EventEmitter"
                 },
                 {
@@ -1542,7 +1542,7 @@
                     "defaultValue": "new EventEmitter<Tab>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31,
+                    "line": 30,
                     "type": "EventEmitter"
                 }
             ],
@@ -1555,7 +1555,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';\nimport { Tab, CronLocalization } from './../projects/ng-cron/src/public-api';\n\n@Component({\n  selector: 'storybook-bs5-quartz-cron',\n  styleUrls: ['../node_modules/bootstrap/scss/bootstrap.scss'],\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <input\n      class=\"form-control mb-2\"\n      readonly\n      [value]=\"value\">\n\n    <bs5-quartz-cron\n      name=\"cron\"\n      [schema]=\"cronBootstrap5\"\n      [cssClassPrefix]=\"cssClassPrefix\"\n      [activeTab]=\"activeTab\"\n      [tabs]=\"tabs\"\n      [hideTabs]=\"hideTabs\"\n      [localization]=\"localization\"\n      [disabled]=\"disabled\"\n      [(ngModel)]=\"value\"\n      (changed)=\"changed.emit($event)\"\n      (tabChanged)=\"tabChanged.emit($event)\">\n    </bs5-quartz-cron>\n  `,\n})\nexport class Bs5QuartzCronComponent {\n  @Output() readonly changed = new EventEmitter<string>();\n  @Output() readonly tabChanged = new EventEmitter<Tab>();\n  @Input() cssClassPrefix?: string;\n  @Input() activeTab?: Tab;\n  @Input() tabs?: Tab[];\n  @Input() hideTabs?: boolean;\n  @Input() localization?: CronLocalization;\n  @Input() value = '';\n  @Input() disabled?: string|null|boolean;\n}\n",
+            "sourceCode": "import { Component, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';\nimport { Tab, CronLocalization } from './../projects/ng-cron/src/public-api';\n\n@Component({\n  selector: 'storybook-bs5-quartz-cron',\n  styleUrls: ['../node_modules/bootstrap/scss/bootstrap.scss'],\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <input\n      class=\"form-control mb-2\"\n      readonly\n      [value]=\"value\">\n\n    <bs5-quartz-cron\n      name=\"cron\"\n      [cssClassPrefix]=\"cssClassPrefix\"\n      [activeTab]=\"activeTab\"\n      [tabs]=\"tabs\"\n      [hideTabs]=\"hideTabs\"\n      [localization]=\"localization\"\n      [disabled]=\"disabled\"\n      [(ngModel)]=\"value\"\n      (changed)=\"changed.emit($event)\"\n      (tabChanged)=\"tabChanged.emit($event)\">\n    </bs5-quartz-cron>\n  `,\n})\nexport class Bs5QuartzCronComponent {\n  @Output() readonly changed = new EventEmitter<string>();\n  @Output() readonly tabChanged = new EventEmitter<Tab>();\n  @Input() cssClassPrefix?: string;\n  @Input() activeTab?: Tab;\n  @Input() tabs?: Tab[];\n  @Input() hideTabs?: boolean;\n  @Input() localization?: CronLocalization;\n  @Input() value = '';\n  @Input() disabled?: string|null|boolean;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2042,7 +2042,7 @@
         },
         {
             "name": "Bs5UnixCronComponent",
-            "id": "component-Bs5UnixCronComponent-9f7c2df235edd045bd216102ba5c9cca3e9345225ae1989163a0f54285f78d4f14e17e0abb2cd4c0f03c4f65860ce526646ee432d353703326336ea3a5f227c9",
+            "id": "component-Bs5UnixCronComponent-32617a846e37d89d844dc33f2240d088304524c82da298fb714b244b497e04f79fd3b4234611562cd01ec44c82830ee7d58a8e212fc8679b3188dccc95b2f309",
             "file": "stories/bs5-unix-cron.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -2056,7 +2056,7 @@
                 "../node_modules/bootstrap/scss/bootstrap.scss"
             ],
             "styles": [],
-            "template": "<input\n  class=\"form-control mb-2\"\n  readonly\n  [value]=\"value\">\n\n<unix-cron\n  name=\"cron\"\n  [cssClassPrefix]=\"cssClassPrefix\"\n  [activeTab]=\"activeTab\"\n  [tabs]=\"tabs\"\n  [hideTabs]=\"hideTabs\"\n  [localization]=\"localization\"\n  [disabled]=\"disabled\"\n  [(ngModel)]=\"value\"\n  (changed)=\"changed.emit($event)\"\n  (tabChanged)=\"tabChanged.emit($event)\">\n</unix-cron>\n",
+            "template": "<input\n  class=\"form-control mb-2\"\n  readonly\n  [value]=\"value\">\n\n<bs5-unix-cron\n  name=\"cron\"\n  [cssClassPrefix]=\"cssClassPrefix\"\n  [activeTab]=\"activeTab\"\n  [tabs]=\"tabs\"\n  [hideTabs]=\"hideTabs\"\n  [localization]=\"localization\"\n  [disabled]=\"disabled\"\n  [(ngModel)]=\"value\"\n  (changed)=\"changed.emit($event)\"\n  (tabChanged)=\"tabChanged.emit($event)\">\n</bs5-unix-cron>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -2145,7 +2145,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';\nimport { Tab, CronLocalization } from './../projects/ng-cron/src/public-api';\n\n@Component({\n  selector: 'storybook-bs5-unix-cron',\n  styleUrls: ['../node_modules/bootstrap/scss/bootstrap.scss'],\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <input\n      class=\"form-control mb-2\"\n      readonly\n      [value]=\"value\">\n\n    <unix-cron\n      name=\"cron\"\n      [cssClassPrefix]=\"cssClassPrefix\"\n      [activeTab]=\"activeTab\"\n      [tabs]=\"tabs\"\n      [hideTabs]=\"hideTabs\"\n      [localization]=\"localization\"\n      [disabled]=\"disabled\"\n      [(ngModel)]=\"value\"\n      (changed)=\"changed.emit($event)\"\n      (tabChanged)=\"tabChanged.emit($event)\">\n    </unix-cron>\n  `,\n})\nexport class Bs5UnixCronComponent {\n  @Output() readonly changed = new EventEmitter<string>();\n  @Output() readonly tabChanged = new EventEmitter<Tab>();\n  @Input() cssClassPrefix?: string;\n  @Input() activeTab?: Tab;\n  @Input() tabs?: Tab[];\n  @Input() hideTabs?: boolean;\n  @Input() localization?: CronLocalization;\n  @Input() value = '';\n  @Input() disabled?: string|null|boolean;\n}\n",
+            "sourceCode": "import { Component, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';\nimport { Tab, CronLocalization } from './../projects/ng-cron/src/public-api';\n\n@Component({\n  selector: 'storybook-bs5-unix-cron',\n  styleUrls: ['../node_modules/bootstrap/scss/bootstrap.scss'],\n  encapsulation: ViewEncapsulation.None,\n  template: `\n    <input\n      class=\"form-control mb-2\"\n      readonly\n      [value]=\"value\">\n\n    <bs5-unix-cron\n      name=\"cron\"\n      [cssClassPrefix]=\"cssClassPrefix\"\n      [activeTab]=\"activeTab\"\n      [tabs]=\"tabs\"\n      [hideTabs]=\"hideTabs\"\n      [localization]=\"localization\"\n      [disabled]=\"disabled\"\n      [(ngModel)]=\"value\"\n      (changed)=\"changed.emit($event)\"\n      (tabChanged)=\"tabChanged.emit($event)\">\n    </bs5-unix-cron>\n  `,\n})\nexport class Bs5UnixCronComponent {\n  @Output() readonly changed = new EventEmitter<string>();\n  @Output() readonly tabChanged = new EventEmitter<Tab>();\n  @Input() cssClassPrefix?: string;\n  @Input() activeTab?: Tab;\n  @Input() tabs?: Tab[];\n  @Input() hideTabs?: boolean;\n  @Input() localization?: CronLocalization;\n  @Input() value = '';\n  @Input() disabled?: string|null|boolean;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2154,6 +2154,481 @@
                 }
             ],
             "stylesData": ""
+        },
+        {
+            "name": "Bs5UnixCronComponent",
+            "id": "component-Bs5UnixCronComponent-812063676a23779255f1fb4df3b5cb9c151a042229f96a67f6a113b28300e206bd0b18bbf7c68d4140b367e06a0598d03b0c6b3cf6e8d899b4fcd737e7f83545-1",
+            "file": "projects/ng-cron/src/lib/bs5-unix/bs5-unix.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "{\n    provide: CronUnixUIService, useFactory: bs5UnixCronServiceFactory\n}"
+                },
+                {
+                    "name": "{\n    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => Bs5UnixCronComponent), multi: true\n}",
+                    "type": "component"
+                }
+            ],
+            "selector": "bs5-unix-cron",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./../unix/unix.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "activeTab",
+                    "defaultValue": "this.getActiveTab()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "Type",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "cssClassPrefix",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "disabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string | null | boolean",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "hideTabs",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "localization",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "CronLocalization",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "tabs",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "Type[] | null",
+                    "decorators": [],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "changed",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "EventEmitter",
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "tabChanged",
+                    "defaultValue": "new EventEmitter<Type>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "EventEmitter",
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "onChange",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": " | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 26,
+                    "modifierKind": [
+                        122
+                    ],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "onTouched",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": " | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 27,
+                    "modifierKind": [
+                        122
+                    ],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "schema",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "CronClassesSchema",
+                    "optional": false,
+                    "description": "",
+                    "line": 29,
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "Type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 28,
+                    "modifierKind": [
+                        144
+                    ],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "applyChanges",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 63,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "getActiveTab",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 74,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "getLocalization",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 84,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "getTabs",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 80,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "mergeDeep",
+                    "args": [
+                        {
+                            "name": "objects",
+                            "type": "RawObject[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "dotDotDotToken": true
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "T",
+                    "typeParameters": [
+                        "T"
+                    ],
+                    "line": 92,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "objects",
+                            "type": "RawObject[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "dotDotDotToken": true,
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "registerOnChange",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "function": [
+                                {
+                                    "name": "cronValue",
+                                    "type": "string",
+                                    "deprecated": false,
+                                    "deprecationMessage": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 55,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "function": [
+                                {
+                                    "name": "cronValue",
+                                    "type": "string",
+                                    "deprecated": false,
+                                    "deprecationMessage": ""
+                                }
+                            ],
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "registerOnTouched",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "function": []
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 59,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "function": [],
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                },
+                {
+                    "name": "writeValue",
+                    "args": [
+                        {
+                            "name": "cronValue",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 51,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "cronValue",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ],
+                    "inheritance": {
+                        "file": "CronHostComponent"
+                    }
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, forwardRef, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\nimport { Type, CronUnixUIService } from '@sbzen/cron-core';\n\nimport { CronHostComponent } from './../cron-host.abstract';\nimport { cronBootstrap5 } from './../styles';\n\nexport function bs5UnixCronServiceFactory() {\n  return new CronUnixUIService()\n};\n\n@Component({\n  selector: 'bs5-unix-cron',\n  templateUrl: './../unix/unix.html',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  providers: [\n    {\n      provide: CronUnixUIService,\n      useFactory: bs5UnixCronServiceFactory\n    },\n    {\n      provide: NG_VALUE_ACCESSOR,\n      useExisting: forwardRef(() => Bs5UnixCronComponent),\n      multi: true\n    }\n  ]\n})\nexport class Bs5UnixCronComponent extends CronHostComponent {\n  constructor(\n    cd: ChangeDetectorRef,\n    cronUnixUI: CronUnixUIService\n  ) {\n    super(\n      cd,\n      cronUnixUI,\n      [Type.MINUTES, Type.HOURS, Type.DAY, Type.MONTH],\n      cronBootstrap5\n    );\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "cd",
+                        "type": "ChangeDetectorRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "cronUnixUI",
+                        "type": "CronUnixUIService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 28,
+                "jsdoctags": [
+                    {
+                        "name": "cd",
+                        "type": "ChangeDetectorRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "cronUnixUI",
+                        "type": "CronUnixUIService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": "CronHostComponent",
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "Bs5UnixCronComponent-1",
+            "templateData": "<cron-container\n  hostClass=\"c-unix\"\n  [localization]=\"getLocalization()\"\n  [tabs]=\"getTabs()\"\n  [activeTab]=\"getActiveTab()\"\n  [hideTabs]=\"hideTabs\"\n  [schema]=\"schema\"\n  (tabChanged)=\"tabChanged.emit($event)\">\n\n  <ng-template\n    #content\n    let-activeTab>\n\n    <ng-container [ngSwitch]=\"activeTab\">\n      <unix-cron-month\n        *ngSwitchCase=\"type.MONTH\"\n        [localization]=\"getLocalization()\"\n        [schema]=\"schema\"\n        (changed)=\"applyChanges()\">\n      </unix-cron-month>\n\n      <unix-cron-minute\n        *ngSwitchCase=\"type.MINUTES\"\n        [localization]=\"getLocalization()\"\n        [schema]=\"schema\"\n        (changed)=\"applyChanges()\">\n      </unix-cron-minute>\n\n      <unix-cron-hour\n        *ngSwitchCase=\"type.HOURS\"\n        [localization]=\"getLocalization()\"\n        [schema]=\"schema\"\n        (changed)=\"applyChanges()\">\n      </unix-cron-hour>\n\n      <unix-cron-day\n        *ngSwitchCase=\"type.DAY\"\n        [localization]=\"getLocalization()\"\n        [schema]=\"schema\"\n        (changed)=\"applyChanges()\">\n      </unix-cron-day>\n    </ng-container>\n  </ng-template>\n</cron-container>\n"
         },
         {
             "name": "ContainerComponent",
@@ -7467,7 +7942,7 @@
         },
         {
             "name": "TestComponent",
-            "id": "component-TestComponent-2d01a6c1445236f2618d93b299cb80b2b238a617c444b89d9ad4706293d7ebbfa9fbcc1092eaf96e49849dabcb50c63b215c7f735a03bf9d1b1e87a8eb8dff7d",
+            "id": "component-TestComponent-d7d3df698c1b5f23814691557e67477af7a41c9ea03131611fd5fc314865c97e39e7279963fff2263e8c777d84b3541869e0a743381ebb8e0f21e719385109ef",
             "file": "cypress/component/test/test.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -7485,19 +7960,6 @@
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
-                {
-                    "name": "cronBootstrap5",
-                    "defaultValue": "cronBootstrap5",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
-                    "modifierKind": [
-                        144
-                    ]
-                },
                 {
                     "name": "tab",
                     "defaultValue": "Tab",
@@ -7520,11 +7982,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ChangeDetectionStrategy } from '@angular/core';\n\nimport { Tab, cronBootstrap5 } from '@sbzen/ng-cron';\n\n@Component({\n  selector: 'test',\n  templateUrl: './test.html',\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class TestComponent {\n  readonly tab = Tab;\n  readonly cronBootstrap5 = cronBootstrap5;\n}\n",
+            "sourceCode": "import { Component, ChangeDetectionStrategy } from '@angular/core';\n\nimport { Tab } from '@sbzen/ng-cron';\n\n@Component({\n  selector: 'test',\n  templateUrl: './test.html',\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class TestComponent {\n  readonly tab = Tab;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "templateData": "<container\n  type=\"QuartzCron\"\n  value=\"0,1,2 2/4 6/2 ? 2-7 SUN,MON 2019/1\"\n  #quartzContainer>\n\n  <ng-template\n    #content\n    let-value=\"value\"\n    let-cssClassPrefix=\"cssClassPrefix\"\n    let-localization=\"localization\"\n    let-activeTab=\"activeTab\"\n    let-tabs=\"tabs\"\n    let-hideTabs=\"hideTabs\"\n    let-disabled=\"disabled\">\n\n    <quartz-cron\n      [cssClassPrefix]=\"cssClassPrefix\"\n      [localization]=\"localization\"\n      [activeTab]=\"activeTab\"\n      [tabs]=\"tabs\"\n      [hideTabs]=\"hideTabs\"\n      [disabled]=\"disabled\"\n      [ngModel]=\"value\"\n      (changed)=\"quartzContainer.updateValue($event)\"\n      (tabChanged)=\"quartzContainer.updateActiveTab($event)\">\n    </quartz-cron>\n  </ng-template>\n</container>\n\n<container\n  type=\"UnixCron\"\n  value=\"0 4 8-14 * *\"\n  [initialTabs]=\"[tab.MINUTES, tab.HOURS, tab.DAY, tab.MONTH]\"\n  #unixContainer>\n\n  <ng-template\n    #content\n    let-value=\"value\"\n    let-cssClassPrefix=\"cssClassPrefix\"\n    let-localization=\"localization\"\n    let-activeTab=\"activeTab\"\n    let-tabs=\"tabs\"\n    let-hideTabs=\"hideTabs\"\n    let-disabled=\"disabled\">\n\n    <unix-cron\n      [cssClassPrefix]=\"cssClassPrefix\"\n      [localization]=\"localization\"\n      [activeTab]=\"activeTab\"\n      [tabs]=\"tabs\"\n      [hideTabs]=\"hideTabs\"\n      [disabled]=\"disabled\"\n      [ngModel]=\"value\"\n      (changed)=\"unixContainer.updateValue($event)\"\n      (tabChanged)=\"unixContainer.updateActiveTab($event)\">\n    </unix-cron>\n  </ng-template>\n</container>\n\n<container\n  type=\"Bs5QuartzCron\"\n  value=\"0,1,2 2/4 6/2 ? 2-7 SUN,MON 2019/1\"\n  #bs5QuartzContainer>\n\n  <ng-template\n    #content\n    let-value=\"value\"\n    let-cssClassPrefix=\"cssClassPrefix\"\n    let-localization=\"localization\"\n    let-activeTab=\"activeTab\"\n    let-tabs=\"tabs\"\n    let-hideTabs=\"hideTabs\"\n    let-disabled=\"disabled\">\n\n    <quartz-cron\n      [styles]=\"cronBootstrap5\"\n      [cssClassPrefix]=\"cssClassPrefix\"\n      [localization]=\"localization\"\n      [activeTab]=\"activeTab\"\n      [tabs]=\"tabs\"\n      [hideTabs]=\"hideTabs\"\n      [disabled]=\"disabled\"\n      [ngModel]=\"value\"\n      (changed)=\"bs5QuartzContainer.updateValue($event)\"\n      (tabChanged)=\"bs5QuartzContainer.updateActiveTab($event)\">\n    </quartz-cron>\n  </ng-template>\n</container>\n\n<container\n  type=\"Bs5UnixCron\"\n  value=\"0 4 8-14 * *\"\n  [initialTabs]=\"[tab.MINUTES, tab.HOURS, tab.DAY, tab.MONTH]\"\n  #bs5UnixContainer>\n\n  <ng-template\n    #content\n    let-value=\"value\"\n    let-cssClassPrefix=\"cssClassPrefix\"\n    let-localization=\"localization\"\n    let-activeTab=\"activeTab\"\n    let-tabs=\"tabs\"\n    let-hideTabs=\"hideTabs\"\n    let-disabled=\"disabled\">\n\n    <unix-cron\n      [styles]=\"cronBootstrap5\"\n      [cssClassPrefix]=\"cssClassPrefix\"\n      [localization]=\"localization\"\n      [activeTab]=\"activeTab\"\n      [tabs]=\"tabs\"\n      [hideTabs]=\"hideTabs\"\n      [disabled]=\"disabled\"\n      [ngModel]=\"value\"\n      (changed)=\"bs5UnixContainer.updateValue($event)\"\n      (tabChanged)=\"bs5UnixContainer.updateActiveTab($event)\">\n    </unix-cron>\n  </ng-template>\n</container>\n"
+            "templateData": "<container\n  type=\"QuartzCron\"\n  value=\"0,1,2 2/4 6/2 ? 2-7 SUN,MON 2019/1\"\n  #quartzContainer>\n\n  <ng-template\n    #content\n    let-value=\"value\"\n    let-cssClassPrefix=\"cssClassPrefix\"\n    let-localization=\"localization\"\n    let-activeTab=\"activeTab\"\n    let-tabs=\"tabs\"\n    let-hideTabs=\"hideTabs\"\n    let-disabled=\"disabled\">\n\n    <quartz-cron\n      [cssClassPrefix]=\"cssClassPrefix\"\n      [localization]=\"localization\"\n      [activeTab]=\"activeTab\"\n      [tabs]=\"tabs\"\n      [hideTabs]=\"hideTabs\"\n      [disabled]=\"disabled\"\n      [ngModel]=\"value\"\n      (changed)=\"quartzContainer.updateValue($event)\"\n      (tabChanged)=\"quartzContainer.updateActiveTab($event)\">\n    </quartz-cron>\n  </ng-template>\n</container>\n\n<container\n  type=\"UnixCron\"\n  value=\"0 4 8-14 * *\"\n  [initialTabs]=\"[tab.MINUTES, tab.HOURS, tab.DAY, tab.MONTH]\"\n  #unixContainer>\n\n  <ng-template\n    #content\n    let-value=\"value\"\n    let-cssClassPrefix=\"cssClassPrefix\"\n    let-localization=\"localization\"\n    let-activeTab=\"activeTab\"\n    let-tabs=\"tabs\"\n    let-hideTabs=\"hideTabs\"\n    let-disabled=\"disabled\">\n\n    <unix-cron\n      [cssClassPrefix]=\"cssClassPrefix\"\n      [localization]=\"localization\"\n      [activeTab]=\"activeTab\"\n      [tabs]=\"tabs\"\n      [hideTabs]=\"hideTabs\"\n      [disabled]=\"disabled\"\n      [ngModel]=\"value\"\n      (changed)=\"unixContainer.updateValue($event)\"\n      (tabChanged)=\"unixContainer.updateActiveTab($event)\">\n    </unix-cron>\n  </ng-template>\n</container>\n\n<container\n  type=\"Bs5QuartzCron\"\n  value=\"0,1,2 2/4 6/2 ? 2-7 SUN,MON 2019/1\"\n  #bs5QuartzContainer>\n\n  <ng-template\n    #content\n    let-value=\"value\"\n    let-cssClassPrefix=\"cssClassPrefix\"\n    let-localization=\"localization\"\n    let-activeTab=\"activeTab\"\n    let-tabs=\"tabs\"\n    let-hideTabs=\"hideTabs\"\n    let-disabled=\"disabled\">\n\n    <bs5-quartz-cron\n      [cssClassPrefix]=\"cssClassPrefix\"\n      [localization]=\"localization\"\n      [activeTab]=\"activeTab\"\n      [tabs]=\"tabs\"\n      [hideTabs]=\"hideTabs\"\n      [disabled]=\"disabled\"\n      [ngModel]=\"value\"\n      (changed)=\"bs5QuartzContainer.updateValue($event)\"\n      (tabChanged)=\"bs5QuartzContainer.updateActiveTab($event)\">\n    </bs5-quartz-cron>\n  </ng-template>\n</container>\n\n<container\n  type=\"Bs5UnixCron\"\n  value=\"0 4 8-14 * *\"\n  [initialTabs]=\"[tab.MINUTES, tab.HOURS, tab.DAY, tab.MONTH]\"\n  #bs5UnixContainer>\n\n  <ng-template\n    #content\n    let-value=\"value\"\n    let-cssClassPrefix=\"cssClassPrefix\"\n    let-localization=\"localization\"\n    let-activeTab=\"activeTab\"\n    let-tabs=\"tabs\"\n    let-hideTabs=\"hideTabs\"\n    let-disabled=\"disabled\">\n\n    <bs5-unix-cron\n      [cssClassPrefix]=\"cssClassPrefix\"\n      [localization]=\"localization\"\n      [activeTab]=\"activeTab\"\n      [tabs]=\"tabs\"\n      [hideTabs]=\"hideTabs\"\n      [disabled]=\"disabled\"\n      [ngModel]=\"value\"\n      (changed)=\"bs5UnixContainer.updateValue($event)\"\n      (tabChanged)=\"bs5UnixContainer.updateActiveTab($event)\">\n    </bs5-unix-cron>\n  </ng-template>\n</container>\n"
         },
         {
             "name": "UnixCronComponent",
@@ -10377,6 +10839,62 @@
             ]
         },
         {
+            "name": "Bs5UnixCronModule",
+            "id": "module-Bs5UnixCronModule-e5eb381e1b8a8faccd110752bd75c1b8294b22644b9b4b20352aa1898c52b29bff950a90a2659077baacb3c1c6e87b84a057a83495bc5ab8602dd7699db5eda2",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-cron/src/lib/bs5-unix/bs5-unix.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { CronContainerModule } from './../container';\nimport { UnixCronMinuteModule } from './../unix/tabs/minute';\nimport { UnixCronMonthModule } from './../unix/tabs/month';\nimport { UnixCronHourModule } from './../unix/tabs/hour';\nimport { UnixCronDayModule } from './../unix/tabs/day';\n\nimport { Bs5UnixCronComponent } from './bs5-unix.component';\n\n@NgModule({\n  imports: [\n    CommonModule,\n    UnixCronMinuteModule,\n    UnixCronMonthModule,\n    UnixCronHourModule,\n    UnixCronDayModule,\n    CronContainerModule\n  ],\n  declarations: [Bs5UnixCronComponent],\n  exports: [Bs5UnixCronComponent]\n})\nexport class Bs5UnixCronModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "Bs5UnixCronComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "CronContainerModule"
+                        },
+                        {
+                            "name": "UnixCronDayModule"
+                        },
+                        {
+                            "name": "UnixCronHourModule"
+                        },
+                        {
+                            "name": "UnixCronMinuteModule"
+                        },
+                        {
+                            "name": "UnixCronMonthModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "CronAndModule",
             "id": "module-CronAndModule-fa1d5e0bde8d35817625db1d648830a7fdd6fc80fc9e749d579ce2368ba5f4468eff7991d7f05abe6b7fa3092f19eac17acb15fae6e8f99c17583dbe95b98fd9",
             "description": "",
@@ -10997,13 +11515,13 @@
         },
         {
             "name": "TestModule",
-            "id": "module-TestModule-0f34b2bfcc8f990e653fd6eba6c873a129bbc67e195ebfd73cc22cfe3625fd52090fce7ac4b0bb7c3d8933a94b166bc839b6533c5a807bc3dae65857c7b17a47",
+            "id": "module-TestModule-03482fb3d5c4ac226e9a66c5a912616019a91bfae1e497f3c1cd59ff34a5a1d1e2931fab1d5f1498ea51a59c69ed4caf6a2bad5d5e95b03ad19511ee3aa64031",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "cypress/component/test/test.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { FormsModule } from '@angular/forms';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { UnixCronModule, QuartzCronModule, Bs5QuartzCronModule } from '@sbzen/ng-cron';\n\nimport { ContainerComponent } from './container';\nimport { TestComponent } from './test.component';\n\n@NgModule({\n  imports: [\n    BrowserModule,\n    FormsModule,\n    UnixCronModule,\n    QuartzCronModule,\n    Bs5QuartzCronModule\n  ],\n  declarations: [\n    ContainerComponent,\n    TestComponent\n  ],\n  exports: [TestComponent]\n})\nexport class TestModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { FormsModule } from '@angular/forms';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { UnixCronModule, QuartzCronModule, Bs5UnixCronModule, Bs5QuartzCronModule } from '@sbzen/ng-cron';\n\nimport { ContainerComponent } from './container';\nimport { TestComponent } from './test.component';\n\n@NgModule({\n  imports: [\n    BrowserModule,\n    FormsModule,\n\n    UnixCronModule,\n    QuartzCronModule,\n    Bs5UnixCronModule,\n    Bs5QuartzCronModule\n  ],\n  declarations: [\n    ContainerComponent,\n    TestComponent\n  ],\n  exports: [TestComponent]\n})\nexport class TestModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -11025,6 +11543,9 @@
                     "elements": [
                         {
                             "name": "Bs5QuartzCronModule"
+                        },
+                        {
+                            "name": "Bs5UnixCronModule"
                         },
                         {
                             "name": "QuartzCronModule"
@@ -11378,7 +11899,77 @@
                 "name": "beforeEachCb",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "cypress/component/test.cy.ts",
+                "file": "cypress/component/active-tab.cy.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+            },
+            {
+                "name": "beforeEachCb",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "cypress/component/disabled.cy.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+            },
+            {
+                "name": "beforeEachCb",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "cypress/component/hide-tabs.cy.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+            },
+            {
+                "name": "beforeEachCb",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "cypress/component/localization.cy.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+            },
+            {
+                "name": "beforeEachCb",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "cypress/component/css-classes.cy.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+            },
+            {
+                "name": "beforeEachCb",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "cypress/component/tabs.cy.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+            },
+            {
+                "name": "beforeEachCb",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "cypress/component/tab-change.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+            },
+            {
+                "name": "beforeEachCb",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "cypress/component/values.cy.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -11458,21 +12049,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/e2e/src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: true\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/e2e/src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/e2e/src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "generateClasses",
@@ -11586,6 +12177,16 @@
                 "args": []
             },
             {
+                "name": "bs5UnixCronServiceFactory",
+                "file": "projects/ng-cron/src/lib/bs5-unix/bs5-unix.component.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": []
+            },
+            {
                 "name": "quartzCronServiceFactory",
                 "file": "projects/ng-cron/src/lib/quartz/quartz.component.ts",
                 "ctype": "miscellaneous",
@@ -11676,12 +12277,96 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "cypress/component/test.cy.ts": [
+            "cypress/component/active-tab.cy.ts": [
                 {
                     "name": "beforeEachCb",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "cypress/component/test.cy.ts",
+                    "file": "cypress/component/active-tab.cy.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+                }
+            ],
+            "cypress/component/disabled.cy.ts": [
+                {
+                    "name": "beforeEachCb",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "cypress/component/disabled.cy.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+                }
+            ],
+            "cypress/component/hide-tabs.cy.ts": [
+                {
+                    "name": "beforeEachCb",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "cypress/component/hide-tabs.cy.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+                }
+            ],
+            "cypress/component/localization.cy.ts": [
+                {
+                    "name": "beforeEachCb",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "cypress/component/localization.cy.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+                }
+            ],
+            "cypress/component/css-classes.cy.ts": [
+                {
+                    "name": "beforeEachCb",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "cypress/component/css-classes.cy.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+                }
+            ],
+            "cypress/component/tabs.cy.ts": [
+                {
+                    "name": "beforeEachCb",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "cypress/component/tabs.cy.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+                }
+            ],
+            "cypress/component/tab-change.ts": [
+                {
+                    "name": "beforeEachCb",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "cypress/component/tab-change.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => beforeEach(() => {\n  cy.mount('<test></test>', {\n    imports: [TestModule]\n  })\n})"
+                }
+            ],
+            "cypress/component/values.cy.ts": [
+                {
+                    "name": "beforeEachCb",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "cypress/component/values.cy.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -11821,18 +12506,6 @@
                     "defaultValue": "(args: Bs5UnixCronComponent) => ({\n  props: {\n    ...args,\n    changed: action('changed'),\n    tabChanged: action('tabChanged')\n  }\n})"
                 }
             ],
-            "projects/e2e/src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/e2e/src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
-                }
-            ],
             "projects/e2e/src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -11843,6 +12516,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "projects/e2e/src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/e2e/src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
                 }
             ],
             "projects/ng-cron/src/lib/styles/generate-schema.ts": [
@@ -11907,6 +12592,18 @@
                 {
                     "name": "bs5QuartzCronServiceFactory",
                     "file": "projects/ng-cron/src/lib/bs5-quartz/bs5-quartz.component.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": []
+                }
+            ],
+            "projects/ng-cron/src/lib/bs5-unix/bs5-unix.component.ts": [
+                {
+                    "name": "bs5UnixCronServiceFactory",
+                    "file": "projects/ng-cron/src/lib/bs5-unix/bs5-unix.component.ts",
                     "ctype": "miscellaneous",
                     "subtype": "function",
                     "deprecated": false,
@@ -12024,7 +12721,67 @@
         "status": "low",
         "files": [
             {
-                "filePath": "cypress/component/test.cy.ts",
+                "filePath": "cypress/component/active-tab.cy.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "beforeEachCb",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "cypress/component/css-classes.cy.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "beforeEachCb",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "cypress/component/disabled.cy.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "beforeEachCb",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "cypress/component/hide-tabs.cy.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "beforeEachCb",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "cypress/component/localization.cy.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "beforeEachCb",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "cypress/component/tab-change.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "beforeEachCb",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "cypress/component/tabs.cy.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -12068,7 +12825,17 @@
                 "linktype": "component",
                 "name": "TestComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "cypress/component/values.cy.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "beforeEachCb",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -12124,6 +12891,25 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "function",
                 "name": "bs5QuartzCronServiceFactory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-cron/src/lib/bs5-unix/bs5-unix.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Bs5UnixCronComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/23",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-cron/src/lib/bs5-unix/bs5-unix.component.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "bs5UnixCronServiceFactory",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
