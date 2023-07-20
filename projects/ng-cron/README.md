@@ -70,3 +70,5 @@ Here is the versions compatibility list:
 | 0.0.1            | 7.x.x         | 4.x.x          |
 | 1.0.1            | 11.x.x        | 4.x.x          |
 | 2.0.0            | 14.x.x        | 4.x.x          |
+| 15.0.0           | 15.x.x        | 4.x.x, 5.x.x   |
+| 16.0.0           | 16.x.x        | 4.x.x, 5.x.x   |
