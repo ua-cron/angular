@@ -11,7 +11,7 @@ import { CronClassesSchema } from './../styles';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CronContainerComponent {
-  @ContentChild('content') content!: TemplateRef<HTMLDivElement>;
+  @ContentChild('content') content!: TemplateRef<{ $implicit: Type }>;
   @ViewChildren('tabEl', { read: ElementRef }) tabEls: QueryList<ElementRef>|null = null;
   @Output() readonly tabChanged = new EventEmitter<Type>();
   @Input() localization!: Required<CronLocalization>;
