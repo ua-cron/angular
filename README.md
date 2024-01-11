@@ -19,12 +19,12 @@ Please check our [demo & documentation](https://ngcron.emptyui.com/) and the lis
 <p align="center">
 	<a href="https://badge.fury.io/js/%40sbzen%2Fng-cron">
 		<img
-			src="https://badge.fury.io/js/%40sbzen%2Fng-cron.svg"
+			src="https://img.shields.io/npm/dm/@sbzen/ng-cron.svg?logo=npm&logoColor=fff&label=NPM+package&color=limegreen"
 			alt="npm version">
 	</a>
 	<a href="https://npmjs.org/%40sbzen%2Fng-cron">
 		<img
-			src="https://img.shields.io/npm/dm/%40sbzen%2Fng-cron.svg"
+			src="https://img.shields.io/npm/v/@sbzen/ng-cron.svg?logo=npm&logoColor=fff&label=NPM+package&color=limegreen"
 			alt="npm downloads">
 	</a>
 </p>
@@ -72,3 +72,4 @@ Here is the versions compatibility list:
 | 2.0.0            | 14.x.x        | 4.x.x          |
 | 15.0.0           | 15.x.x        | 4.x.x, 5.x.x   |
 | 16.0.0           | 16.x.x        | 4.x.x, 5.x.x   |
+| 17.0.0           | 17.x.x        | 4.x.x, 5.x.x   |

@@ -1,6 +1,6 @@
 {
   "name": "@sbzen/ng-cron",
-  "version": "16.0.0",
+  "version": "17.0.0",
   "description": "Quartz Cron Component - Angular",
   "author": "Serhii Bzenko <bzenkosergey@gmail.com>",
   "license": "MIT",
@@ -26,8 +26,8 @@
   ],
   "sideEffects": false,
   "peerDependencies": {
-    "@angular/common": "^16.0.0",
-    "@angular/core": "^16.0.0"
+    "@angular/common": "^17.0.0",
+    "@angular/core": "^17.0.0"
   },
   "dependencies": {
     "@sbzen/cron-core": "2.0.2",
