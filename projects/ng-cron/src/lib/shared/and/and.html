@@ -17,27 +17,28 @@
   </div>
 
   <div class="{{schema.check.row}} c-and-list">
-    <div
-      *ngFor="let item of options"
-      class="{{gridSize || (schema.col2 + ' ' + schema.colMd1)}} c-and-item"
-      [attr.item-value]="item.value">
+    @for (item of options; track item) {
+      <div
+        class="{{gridSize || (schema.col2 + ' ' + schema.colMd1)}} c-and-item"
+        [attr.item-value]="item.value">
 
-      <div class="{{schema.check.root}} c-and-item-check">
-        <input
-          class="{{schema.check.field}} c-and-item-field"
-          type="checkbox"
-          [attr.id]="segmentId + '_' + item.value"
-          [value]="item.value"
-          [disabled]="disabledControls"
-          [checked]="isValueSelected(item.value)"
-          (click)="changeValue($event, item.value)">
+        <div class="{{schema.check.root}} c-and-item-check">
+          <input
+            class="{{schema.check.field}} c-and-item-field"
+            type="checkbox"
+            [attr.id]="segmentId + '_' + item.value"
+            [value]="item.value"
+            [disabled]="disabledControls"
+            [checked]="isValueSelected(item.value)"
+            (click)="changeValue($event, item.value)">
 
-        <label
-          class="{{schema.check.label}} c-and-item-label"
-          [attr.for]="segmentId + '_' + item.value">
-          {{item.label}}
-        </label>
+          <label
+            class="{{schema.check.label}} c-and-item-label"
+            [attr.for]="segmentId + '_' + item.value">
+            {{item.label}}
+          </label>
+        </div>
       </div>
-    </div>
+    }
   </div>
 </div>

@@ -1,29 +1,31 @@
 <div class="c-host {{hostClass}}">
-  <ul
-    *ngIf="!hideTabs && tabs.length"
-    class="{{schema.tabs.root}} c-tabs"
-    role="tablist"
-    aria-label="Cron Generator Tabs">
+  @if (!hideTabs && tabs.length) {
+    <ul
+      class="{{schema.tabs.root}} c-tabs"
+      role="tablist"
+      aria-label="Cron Generator Tabs">
 
-    <li
-      *ngFor="let item of tabs"
-      class="{{schema.tabs.item}} c-tab-item"
-      role="presentation">
+      @for (item of tabs; track item) {
+        <li
+          class="{{schema.tabs.item}} c-tab-item"
+          role="presentation">
 
-      <button
-        role="tab"
-        #tabEl
-        type="button"
-        class="{{schema.tabs.link}} {{ activeTab === item ? schema.tabs.active : '' }} {{item}} c-tab"
-        [attr.aria-selected]="activeTab === item"
-        [attr.tabindex]="activeTab === item ? 0 : -1"
-        (click)="setTab(item)"
-        (keyup)="navigateTab($event.code, activeTab)">
+          <button
+            role="tab"
+            #tabEl
+            type="button"
+            class="{{schema.tabs.link}} {{ activeTab === item ? schema.tabs.active : '' }} {{item}} c-tab"
+            [attr.aria-selected]="activeTab === item"
+            [attr.tabindex]="activeTab === item ? 0 : -1"
+            (click)="setTab(item)"
+            (keyup)="navigateTab($event.code, activeTab)">
 
-        {{localization.tabs[tabsLocalizationKeys[item]]}}
-      </button>
-    </li>
-  </ul>
+            {{localization.tabs[tabsLocalizationKeys[item]]}}
+          </button>
+        </li>
+      }
+    </ul>
+  }
 
   <div
     class="c-tab-content"

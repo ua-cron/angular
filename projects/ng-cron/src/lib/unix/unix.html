@@ -11,34 +11,30 @@
     #content
     let-activeTab>
 
-    <ng-container [ngSwitch]="activeTab">
+    @if (activeTab === type.MONTH) {
       <unix-cron-month
-        *ngSwitchCase="type.MONTH"
         [localization]="getLocalization()"
         [schema]="schema"
         (changed)="applyChanges()">
       </unix-cron-month>
-
+    } @else if (activeTab === type.MINUTES) {
       <unix-cron-minute
-        *ngSwitchCase="type.MINUTES"
         [localization]="getLocalization()"
         [schema]="schema"
         (changed)="applyChanges()">
       </unix-cron-minute>
-
+    } @else if (activeTab === type.HOURS) {
       <unix-cron-hour
-        *ngSwitchCase="type.HOURS"
         [localization]="getLocalization()"
         [schema]="schema"
         (changed)="applyChanges()">
       </unix-cron-hour>
-
+    } @else if (activeTab === type.DAY) {
       <unix-cron-day
-        *ngSwitchCase="type.DAY"
         [localization]="getLocalization()"
         [schema]="schema"
         (changed)="applyChanges()">
       </unix-cron-day>
-    </ng-container>
+    }
   </ng-template>
 </cron-container>

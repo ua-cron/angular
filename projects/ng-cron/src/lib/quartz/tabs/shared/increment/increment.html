@@ -21,12 +21,13 @@
     [disabled]="disabledControls"
     (change)="setPrimaryValue($event)">
 
-    <option
-      *ngFor="let item of primaryOptions"
-      [value]="item.value"
-      [selected]="primaryValue === item.value">
-      {{item.value}}
-    </option>
+    @for (item of primaryOptions; track item) {
+      <option
+        [value]="item.value"
+        [selected]="primaryValue === item.value">
+        {{item.value}}
+      </option>
+    }
   </select>
 
   <label
@@ -40,11 +41,12 @@
     [disabled]="disabledControls"
     (change)="setSecondaryValue($event)">
 
-    <option
-      *ngFor="let item of secondaryOptions"
-      [value]="item.value"
-      [selected]="secondaryValue === item.value">
-      {{item.label}}
-    </option>
+    @for (item of secondaryOptions; track item) {
+      <option
+        [value]="item.value"
+        [selected]="secondaryValue === item.value">
+        {{item.label}}
+      </option>
+    }
   </select>
 </div>
