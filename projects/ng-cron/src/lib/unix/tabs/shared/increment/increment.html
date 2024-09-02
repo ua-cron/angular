@@ -21,12 +21,13 @@
     [disabled]="disabledControls"
     (change)="setPrimaryValue($event)">
 
-    <option
-      *ngFor="let item of primaryOptions"
-      [value]="item.value"
-      [selected]="primaryValue === item.value">
-      {{item.value}}
-    </option>
+    @for (item of primaryOptions; track item) {
+      <option
+        [value]="item.value"
+        [selected]="primaryValue === item.value">
+        {{item.value}}
+      </option>
+    }
   </select>
 
   <label

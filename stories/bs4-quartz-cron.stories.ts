@@ -1,4 +1,4 @@
-import { Story, Meta, moduleMetadata } from '@storybook/angular';
+import { StoryObj, Meta, moduleMetadata } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { QuartzCronModule, Tab } from './../projects/ng-cron/src/public-api';
 import { Bs4QuartzCronComponent } from './bs4-quartz-cron.component';
 
-export default {
+const meta: Meta<Bs4QuartzCronComponent> = {
   title: 'Bootstrap4 - Quartz Cron',
   decorators: [
     moduleMetadata({
@@ -55,18 +55,16 @@ export default {
       control: 'object'
     },
   }
-} as Meta;
+};
+export default meta;
 
-const Template: Story<Bs4QuartzCronComponent> = (args: Bs4QuartzCronComponent) => ({
-  props: {
-    ...args,
+const Template: StoryObj<Bs4QuartzCronComponent> = {
+  args: {
+    value: '2,0,4,3,1 0/1 3/2 ? * 4/5 *',
     changed: action('changed'),
     tabChanged: action('tabChanged')
   }
-});
-
-export const Default = Template.bind({});
-Default.args = {
-  value: '2,0,4,3,1 0/1 3/2 ? * 4/5 *'
 };
+
+export const Default = Template;
 

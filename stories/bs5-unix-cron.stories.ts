@@ -1,4 +1,4 @@
-import { Story, Meta, moduleMetadata } from '@storybook/angular';
+import { StoryObj, Meta, moduleMetadata } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { Bs5UnixCronModule, Tab } from './../projects/ng-cron/src/public-api';
 import { Bs5UnixCronComponent } from './bs5-unix-cron.component';
 
-export default {
+const meta: Meta<Bs5UnixCronComponent> = {
   title: 'Bootstrap5 - Unix Cron',
   decorators: [
     moduleMetadata({
@@ -55,18 +55,16 @@ export default {
       control: 'object'
     },
   }
-} as Meta;
+};
+export default meta;
 
-const Template: Story<Bs5UnixCronComponent> = (args: Bs5UnixCronComponent) => ({
-  props: {
-    ...args,
+const Template: StoryObj<Bs5UnixCronComponent> = {
+  args: {
+    value: '0,1,2 */8 ? JAN,FEB */4',
     changed: action('changed'),
     tabChanged: action('tabChanged')
   }
-});
-
-export const Default = Template.bind({});
-Default.args = {
-  value: '0,1,2 */8 ? JAN,FEB */4'
 };
+
+export const Default = Template;
 

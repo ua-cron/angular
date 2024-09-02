@@ -42,12 +42,13 @@
     [disabled]="api.isDayOfWeekIncrementControlsDisabled()"
     (change)="setDayOfWeekIncrementPrimary($event)">
 
-    <option
-      *ngFor="let item of daysOfWeekEvery"
-      [value]="item.value"
-      [selected]="api.getDayOfWeekIncrementPrimary() === item.value">
-      {{item.value}}
-    </option>
+    @for (item of daysOfWeekEvery; track item) {
+      <option
+        [value]="item.value"
+        [selected]="api.getDayOfWeekIncrementPrimary() === item.value">
+        {{item.value}}
+      </option>
+    }
   </select>
 
   <label
@@ -61,13 +62,14 @@
     [disabled]="api.isDayOfWeekIncrementControlsDisabled()"
     (change)="setDayOfWeekIncrementSecondary($event)">
 
-    <option
-      *ngFor="let item of daysOfWeek"
-      [value]="item.value"
-      [selected]="api.getDayOfWeekIncrementSecondary() === item.value">
+    @for (item of daysOfWeek; track item) {
+      <option
+        [value]="item.value"
+        [selected]="api.getDayOfWeekIncrementSecondary() === item.value">
 
-      {{localizeLabel(item.label, this.localization.common.dayOfWeek)}}
-    </option>
+        {{localizeLabel(item.label, this.localization.common.dayOfWeek)}}
+      </option>
+    }
   </select>
 </div>
 
@@ -95,12 +97,13 @@
     [disabled]="api.isDayOfMonthIncrementControlsDisabled()"
     (change)="setDayOfMonthIncrementPrimary($event)">
 
-    <option
-      *ngFor="let item of daysOfMonth"
-      [value]="item.value"
-      [selected]="api.getDayOfMonthIncrementPrimary() === item.value">
-      {{item.value}}
-    </option>
+    @for (item of daysOfMonth; track item) {
+      <option
+        [value]="item.value"
+        [selected]="api.getDayOfMonthIncrementPrimary() === item.value">
+        {{item.value}}
+      </option>
+    }
   </select>
 
   <label
@@ -115,13 +118,14 @@
     [disabled]="api.isDayOfMonthIncrementControlsDisabled()"
     (change)="setDayOfMonthIncrementSecondary($event)">
 
-    <option
-      *ngFor="let item of daysOfMonthEvery"
-      [value]="item.value"
-      [selected]="api.getDayOfMonthIncrementSecondary() === item.value">
+    @for (item of daysOfMonthEvery; track item) {
+      <option
+        [value]="item.value"
+        [selected]="api.getDayOfMonthIncrementSecondary() === item.value">
 
-      {{localizeLabel(item.label, localization.common.dayOfMonth)}}
-    </option>
+        {{localizeLabel(item.label, localization.common.dayOfMonth)}}
+      </option>
+    }
   </select>
 
   <label
@@ -152,28 +156,29 @@
   </div>
 
   <div class="{{schema.check.row}} c-and-weekday-list">
-    <div
-      *ngFor="let item of daysOfWeekCodes"
-      class="{{schema.col3}} {{schema.colMd2}} c-and-weekday-item"
-      [attr.item-value]="item.value">
+    @for (item of daysOfWeekCodes; track item) {
+      <div
+        class="{{schema.col3}} {{schema.colMd2}} c-and-weekday-item"
+        [attr.item-value]="item.value">
 
-      <div class="{{schema.check.root}} c-and-weekday-item-check">
-        <input
-          class="{{schema.check.field}} c-and-weekday-item-field"
-          type="checkbox"
-          [attr.id]="genId(mode.AND, segment.dayOfWeek + item.value)"
-          [value]="item.value"
-          [disabled]="api.isDayOfWeekAndControlsDisabled()"
-          [checked]="api.isSelectedDayOfWeekAndValue(item.value)"
-          (click)="api.selectDayOfWeekAndValue(item.value)">
+        <div class="{{schema.check.root}} c-and-weekday-item-check">
+          <input
+            class="{{schema.check.field}} c-and-weekday-item-field"
+            type="checkbox"
+            [attr.id]="genId(mode.AND, segment.dayOfWeek + item.value)"
+            [value]="item.value"
+            [disabled]="api.isDayOfWeekAndControlsDisabled()"
+            [checked]="api.isSelectedDayOfWeekAndValue(item.value)"
+            (click)="api.selectDayOfWeekAndValue(item.value)">
 
-        <label
-          class="{{schema.check.label}} c-and-weekday-item-label"
-          [attr.for]="genId(mode.AND, segment.dayOfWeek + item.value)">
-          {{localizeLabel(item.label, localization.common.dayOfWeek)}}
-        </label>
+          <label
+            class="{{schema.check.label}} c-and-weekday-item-label"
+            [attr.for]="genId(mode.AND, segment.dayOfWeek + item.value)">
+            {{localizeLabel(item.label, localization.common.dayOfWeek)}}
+          </label>
+        </div>
       </div>
-    </div>
+    }
   </div>
 </div>
 
@@ -214,28 +219,29 @@
   </div>
 
   <div class="{{schema.check.row}} c-and-monthday-list">
-    <div
-      *ngFor="let item of daysOfMonth"
-      class="{{schema.col2}} {{schema.colMd1}} c-and-monthday-item"
-      [attr.item-value]="item.value">
+    @for (item of daysOfMonth; track item) {
+      <div
+        class="{{schema.col2}} {{schema.colMd1}} c-and-monthday-item"
+        [attr.item-value]="item.value">
 
-      <div class="{{schema.check.root}} c-and-monthday-item-check">
-        <input
-          class="{{schema.check.field}} c-and-monthday-item-field"
-          type="checkbox"
-          [attr.id]="genId(mode.AND, segment.dayOfMonth + item.value)"
-          [value]="item.value"
-          [disabled]="api.isDayOfMonthAndControlsDisabled()"
-          [checked]="api.isSelectedDayOfMonthAndValue(item.value)"
-          (click)="api.selectDayOfMonthAndValue(item.value)">
+        <div class="{{schema.check.root}} c-and-monthday-item-check">
+          <input
+            class="{{schema.check.field}} c-and-monthday-item-field"
+            type="checkbox"
+            [attr.id]="genId(mode.AND, segment.dayOfMonth + item.value)"
+            [value]="item.value"
+            [disabled]="api.isDayOfMonthAndControlsDisabled()"
+            [checked]="api.isSelectedDayOfMonthAndValue(item.value)"
+            (click)="api.selectDayOfMonthAndValue(item.value)">
 
-        <label
-          class="{{schema.check.label}} c-and-monthday-item-label"
-          [attr.for]="genId(mode.AND, segment.dayOfMonth + item.value)">
-          {{item.label}}
-        </label>
+          <label
+            class="{{schema.check.label}} c-and-monthday-item-label"
+            [attr.for]="genId(mode.AND, segment.dayOfMonth + item.value)">
+            {{item.label}}
+          </label>
+        </div>
       </div>
-    </div>
+    }
   </div>
 </div>
 
@@ -303,12 +309,13 @@
     [disabled]="api.isDayOfWeekLastNTHDayWeekControlsDisabled()"
     (change)="setDayOfWeekLastNTHDayWeekValue($event)">
 
-    <option
-      *ngFor="let item of daysOfWeek"
-      [value]="item.value + 'L'"
-      [selected]="api.getDayOfWeekLastNTHDayWeekValue() === item.value">
-      {{localizeLabel(item.label, localization.common.dayOfWeek)}}
-    </option>
+    @for (item of daysOfWeek; track item) {
+      <option
+        [value]="item.value + 'L'"
+        [selected]="api.getDayOfWeekLastNTHDayWeekValue() === item.value">
+        {{localizeLabel(item.label, localization.common.dayOfWeek)}}
+      </option>
+    }
   </select>
 
   <label
@@ -335,12 +342,13 @@
     [disabled]="api.isDayOfMonthDaysBeforeEndMonthControlsDisabled()"
     (change)="setDayOfMonthDaysBeforeEndMonthValue($event)">
 
-    <option
-      *ngFor="let item of daysOfMonth"
-      [value]="'L-' + item.value"
-      [selected]="api.getDayOfMonthDaysBeforeEndMonthValue() === item.value">
-      {{item.label}}
-    </option>
+    @for (item of daysOfMonth; track item) {
+      <option
+        [value]="'L-' + item.value"
+        [selected]="api.getDayOfMonthDaysBeforeEndMonthValue() === item.value">
+        {{item.label}}
+      </option>
+    }
   </select>
 
   <label
@@ -374,12 +382,13 @@
     [disabled]="api.isDayOfMonthNearestWeekDayOfMonthControlsDisabled()"
     (change)="setDayOfMonthNearestWeekDayOfMonthValue($event)">
 
-    <option
-      *ngFor="let item of daysOfMonthEvery"
-      [value]="item.value + 'W'"
-      [selected]="api.getDayOfMonthNearestWeekDayOfMonthValue() === item.value">
-      {{localizeLabel(item.label, localization.common.dayOfMonth)}}
-    </option>
+    @for (item of daysOfMonthEvery; track item) {
+      <option
+        [value]="item.value + 'W'"
+        [selected]="api.getDayOfMonthNearestWeekDayOfMonthValue() === item.value">
+        {{localizeLabel(item.label, localization.common.dayOfMonth)}}
+      </option>
+    }
   </select>
 
   <label
@@ -413,12 +422,13 @@
     [disabled]="api.isDayOfWeekNTHWeekDayOfMonthControlsDisabled()"
     (change)="setDayOfWeekNTHWeekDayOfMonthPrimaryValue($event)">
 
-    <option
-      *ngFor="let item of limitedDaysOfMonth"
-      [value]="item.value"
-      [selected]="api.getDayOfWeekNTHWeekDayOfMonthPrimaryValue() === item.value">
-      {{localizeLabel(item.label, localization.common.dayOfMonth)}}
-    </option>
+    @for (item of limitedDaysOfMonth; track item) {
+      <option
+        [value]="item.value"
+        [selected]="api.getDayOfWeekNTHWeekDayOfMonthPrimaryValue() === item.value">
+        {{localizeLabel(item.label, localization.common.dayOfMonth)}}
+      </option>
+    }
   </select>
 
   <select
@@ -426,12 +436,13 @@
     [disabled]="api.isDayOfWeekNTHWeekDayOfMonthControlsDisabled()"
     (change)="setDayOfWeekNTHWeekDayOfMonthSecondaryValue($event)">
 
-    <option
-      *ngFor="let item of daysOfWeek"
-      [value]="item.value"
-      [selected]="api.getDayOfWeekNTHWeekDayOfMonthSecondaryValue() === item.value">
-      {{localizeLabel(item.label, localization.common.dayOfWeek)}}
-    </option>
+    @for (item of daysOfWeek; track item) {
+      <option
+        [value]="item.value"
+        [selected]="api.getDayOfWeekNTHWeekDayOfMonthSecondaryValue() === item.value">
+        {{localizeLabel(item.label, localization.common.dayOfWeek)}}
+      </option>
+    }
   </select>
 
   <label
