@@ -1,5 +1,5 @@
 import { StoryObj, Meta, moduleMetadata } from '@storybook/angular';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
