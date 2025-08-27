@@ -10,20 +10,21 @@ export function bs5QuartzCronServiceFactory() {
 };
 
 @Component({
-  selector: 'bs5-quartz-cron',
-  templateUrl: './../quartz/quartz.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: CronQuartzUIService,
-      useFactory: bs5QuartzCronServiceFactory
-    },
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => Bs5QuartzCronComponent),
-      multi: true
-    }
-  ]
+    selector: 'bs5-quartz-cron',
+    templateUrl: './../quartz/quartz.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [
+        {
+            provide: CronQuartzUIService,
+            useFactory: bs5QuartzCronServiceFactory
+        },
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => Bs5QuartzCronComponent),
+            multi: true
+        }
+    ],
+    standalone: false
 })
 export class Bs5QuartzCronComponent extends CronHostComponent {
   constructor(

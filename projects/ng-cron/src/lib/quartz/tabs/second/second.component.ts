@@ -4,9 +4,10 @@ import { Segment, Type, getList, CronQuartzUIService } from '@sbzen/cron-core';
 import { CronTabSingleSegmentComponent } from './../../../cron-tab-single-segment.abstract';
 
 @Component({
-  selector: 'quartz-cron-second',
-  templateUrl: './second.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'quartz-cron-second',
+    templateUrl: './second.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class QuartzCronSecondComponent extends CronTabSingleSegmentComponent {
   readonly secondCodes = getList(Segment.seconds, true);

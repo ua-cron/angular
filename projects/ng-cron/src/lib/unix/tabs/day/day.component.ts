@@ -4,9 +4,10 @@ import { Segment, Type, getList, getDaysOfWeekCodes, CronUnixUIService } from '@
 import { CronTabComponent } from './../../../cron-tab.abstract';
 
 @Component({
-  selector: 'unix-cron-day',
-  templateUrl: './day.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'unix-cron-day',
+    templateUrl: './day.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UnixCronDayComponent extends CronTabComponent {
   protected readonly segments: Segment[];

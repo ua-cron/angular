@@ -4,9 +4,10 @@ import { Segment, Type, getList, CronUnixUIService } from '@sbzen/cron-core';
 import { CronTabSingleSegmentComponent } from './../../../cron-tab-single-segment.abstract';
 
 @Component({
-  selector: 'unix-cron-minute',
-  templateUrl: './minute.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'unix-cron-minute',
+    templateUrl: './minute.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UnixCronMinuteComponent extends CronTabSingleSegmentComponent {
   readonly minuteCodes = getList(Segment.minutes, true);

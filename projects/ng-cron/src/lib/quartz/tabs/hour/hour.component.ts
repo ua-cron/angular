@@ -4,9 +4,10 @@ import { Segment, Type, getList, CronQuartzUIService } from '@sbzen/cron-core';
 import { CronTabSingleSegmentComponent } from './../../../cron-tab-single-segment.abstract';
 
 @Component({
-  selector: 'quartz-cron-hour',
-  templateUrl: './hour.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'quartz-cron-hour',
+    templateUrl: './hour.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class QuartzCronHourComponent extends CronTabSingleSegmentComponent {
   readonly hourCodes = getList(Segment.hours, true);

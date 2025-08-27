@@ -10,20 +10,21 @@ export function bs5UnixCronServiceFactory() {
 };
 
 @Component({
-  selector: 'bs5-unix-cron',
-  templateUrl: './../unix/unix.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: CronUnixUIService,
-      useFactory: bs5UnixCronServiceFactory
-    },
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => Bs5UnixCronComponent),
-      multi: true
-    }
-  ]
+    selector: 'bs5-unix-cron',
+    templateUrl: './../unix/unix.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [
+        {
+            provide: CronUnixUIService,
+            useFactory: bs5UnixCronServiceFactory
+        },
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => Bs5UnixCronComponent),
+            multi: true
+        }
+    ],
+    standalone: false
 })
 export class Bs5UnixCronComponent extends CronHostComponent {
   constructor(

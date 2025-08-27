@@ -5,10 +5,11 @@ import { CronLocalization } from './../cron-localization';
 import { CronClassesSchema } from './../styles';
 
 @Component({
-  selector: 'cron-container',
-  templateUrl: './container.html',
-  styleUrls: ['./container.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'cron-container',
+    templateUrl: './container.html',
+    styleUrls: ['./container.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CronContainerComponent {
   @ContentChild('content') content!: TemplateRef<{ $implicit: Type }>;

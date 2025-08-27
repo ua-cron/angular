@@ -5,9 +5,10 @@ import { Mode } from '@sbzen/cron-core';
 import { CronClassesSchema } from './../../../../styles';
 
 @Component({
-  selector: 'quartz-cron-increment',
-  templateUrl: './increment.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'quartz-cron-increment',
+    templateUrl: './increment.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class QuartzCronIncrementComponent {
   @Output() readonly selected = new EventEmitter<void>();

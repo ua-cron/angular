@@ -5,9 +5,10 @@ import { Mode } from '@sbzen/cron-core';
 import { CronClassesSchema } from './../../../../styles';
 
 @Component({
-  selector: 'unix-cron-increment',
-  templateUrl: './increment.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'unix-cron-increment',
+    templateUrl: './increment.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UnixCronIncrementComponent {
   @Output() readonly selected = new EventEmitter<void>();

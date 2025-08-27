@@ -4,9 +4,10 @@ import { Segment, Type, getMonthCodes, getList, CronUnixUIService } from '@sbzen
 import { CronTabSingleSegmentComponent } from './../../../cron-tab-single-segment.abstract';
 
 @Component({
-  selector: 'unix-cron-month',
-  templateUrl: './month.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'unix-cron-month',
+    templateUrl: './month.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UnixCronMonthComponent extends CronTabSingleSegmentComponent {
   readonly monthCodes = getMonthCodes();

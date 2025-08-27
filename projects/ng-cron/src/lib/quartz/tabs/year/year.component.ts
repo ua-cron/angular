@@ -4,9 +4,10 @@ import { Segment, getList, Type, CronQuartzUIService } from '@sbzen/cron-core';
 import { CronTabSingleSegmentComponent } from './../../../cron-tab-single-segment.abstract';
 
 @Component({
-  selector: 'quartz-cron-year',
-  templateUrl: './year.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'quartz-cron-year',
+    templateUrl: './year.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class QuartzCronYearComponent extends CronTabSingleSegmentComponent {
   readonly yearCodes = getList(Segment.year, true);

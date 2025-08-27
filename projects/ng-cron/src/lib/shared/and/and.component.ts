@@ -4,9 +4,10 @@ import { Mode } from '@sbzen/cron-core';
 import { CronClassesSchema } from './../../styles';
 
 @Component({
-  selector: 'cron-and',
-  templateUrl: './and.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'cron-and',
+    templateUrl: './and.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CronAndComponent {
   @Output() readonly selected = new EventEmitter<void>();

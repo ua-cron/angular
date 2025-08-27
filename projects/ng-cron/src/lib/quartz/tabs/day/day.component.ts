@@ -4,9 +4,10 @@ import { Segment, Type, getDaysOfWeekCodes, getList, CronQuartzUIService } from 
 import { CronTabComponent } from './../../../cron-tab.abstract';
 
 @Component({
-  selector: 'quartz-cron-day',
-  templateUrl: './day.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'quartz-cron-day',
+    templateUrl: './day.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class QuartzCronDayComponent extends CronTabComponent {
   readonly api = this.cronUI.getApi(Type.DAY);
