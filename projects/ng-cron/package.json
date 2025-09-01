@@ -1,15 +1,12 @@
 {
-  "name": "@sbzen/ng-cron",
-  "version": "18.0.0",
+  "name": "@k0say/ng-cron",
+  "version": "19.0.1",
   "description": "Quartz Cron Component - Angular",
   "author": "Serhii Bzenko <bzenkosergey@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/ua-cron/angular.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ua-cron/angular/issues"
+    "url": "git+ssh://git@github.com:k0say/ng-cron.git"
   },
   "homepage": "https://ngcron.emptyui.com/",
   "keywords": [
@@ -26,8 +23,8 @@
   ],
   "sideEffects": false,
   "peerDependencies": {
-    "@angular/common": "^18.0.0",
-    "@angular/core": "^18.0.0"
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0"
   },
   "dependencies": {
     "@sbzen/cron-core": "2.0.2",
